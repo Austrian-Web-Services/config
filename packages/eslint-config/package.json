@@ -1,0 +1,44 @@
+{
+  "name": "@atws/eslint-config",
+  "version": "0.0.1",
+  "description": "An opinionated base setup of eslint",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Austrian-Web-Services/config/issues"
+  },
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/eslint-config",
+  "engines": {
+    "node": ">=16"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0"
+  },
+  "devDependencies": {
+    "eslint-config-canonical": "^40.0.7",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-security": "^1.7.1",
+    "prettier": "^2.8.4"
+  }
+}

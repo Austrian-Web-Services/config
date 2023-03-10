@@ -1,0 +1,1 @@
+# @atws/tsconfig
