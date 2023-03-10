@@ -16,7 +16,7 @@ Add to your `projenrc.js` file:
 
 ```js
 const { awscdk } = require("projen")
-const { PrettierConfig, EslintConfig } = require("@atws/projen-config")
+const { PrettierConfig, EslintConfig, VscodeConfig } = require("@atws/projen-config")
 
 const project = new awscdk.AwsCdkConstructLibrary({ ... })
 
@@ -25,6 +25,12 @@ new PrettierConfig(project)
 new EslintConfig(project, {
   cdkFileRegex: "**/src/**/*.ts",
   reactFileRegex: "**/webapp/**/*.{ts,tsx}",
+})
+
+new VscodeConfig(project, {
+  additionalSearchExclusion: {
+    '**/public': true,
+  },
 })
 ```
 
@@ -46,5 +52,17 @@ Add an opinionated base config for eslint. It allows to specify the file regex f
 new EslintConfig(project, {
   cdkFileRegex: "**/src/**/*.ts",
   reactFileRegex: "**/webapp/**/*.{ts,tsx}",
+})
+```
+
+### Setup a VS Code workspace settings file
+
+Add a `.vscode/settings.json` file to the project. It defines some standard search exclusions and enables `formatOnSave`.
+
+```js
+new VscodeConfig(project, {
+  additionalSearchExclusion: {
+    '**/public': true,
+  },
 })
 ```
