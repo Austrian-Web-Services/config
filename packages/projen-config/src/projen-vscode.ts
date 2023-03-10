@@ -1,4 +1,4 @@
-import { DependencyType, type FileBase, JsonFile, type Project } from 'projen'
+import { type FileBase, JsonFile, type Project } from 'projen'
 
 const filePath = '.vscode/settings.json'
 
