@@ -1,7 +1,7 @@
 [![Austrian Web Services / Config](logo.png)](https://github.com/Austrian-Web-Services/config)
 
 [![🚀 Release](https://github.com/Austrian-Web-Services/config/actions/workflows/release.yaml/badge.svg?event=push)](https://github.com/Austrian-Web-Services/config/actions/workflows/release.yaml)
-[![Maintainer](https://img.shields.io/badge/Mainainer-%40NimmLor-blue)](https://img.shields.io/badge/Mainainer-%40NimmLor-blues)
+[![Maintainer](https://img.shields.io/badge/Mainainer-%40NimmLor-blue)](https://img.shields.io/badge/Maintainer-%40NimmLor-blues)
 
 <h3 align="center">An opinionated collection of configuration files</h3>
 
