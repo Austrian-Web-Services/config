@@ -56,9 +56,6 @@ export class VscodeConfig {
         ...options?.additionalSettings,
       },
     })
-
-    project.deps.addDependency('@atws/Vscode-config', DependencyType.DEVENV)
-    project.deps.addDependency('Vscode', DependencyType.DEVENV)
   }
 
   public getFile = () => {
