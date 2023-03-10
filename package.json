@@ -26,6 +26,7 @@
     "lint:fix": "eslint --cache --fix .",
     "release": "yarn workspaces run semantic-release"
   },
+  "version": "1.0.0",
   "workspaces": [
     "packages/*"
   ]
