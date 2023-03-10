@@ -65,7 +65,7 @@ module.exports = {
     // only warn on then/catch/finally
     'promise/prefer-await-to-then': 'warn',
 
-
+    // improve readability
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
