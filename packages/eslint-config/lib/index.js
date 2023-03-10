@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
-    'canonical',
+    'canonical/typescript',
+    'canonical/typescript-type-checking',
     'plugin:prettier/recommended',
-    'plugin:security/recommended',
   ],
   overrides: [
     {

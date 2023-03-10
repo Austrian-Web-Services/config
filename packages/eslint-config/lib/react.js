@@ -1,6 +1,8 @@
 module.exports = {
   extends: [
     '@atws/eslint-config',
+    'canonical/react',
+    'plugin:security/recommended',
   ],
   rules: {
     // allows useEffect to be at the top
