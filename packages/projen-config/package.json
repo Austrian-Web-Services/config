@@ -35,8 +35,8 @@
     "type": "git"
   },
   "scripts": {
-    "build": "exit 0",
-    "semantic-release": "exit 0"
+    "build": "tsup ./src/index.ts --dts",
+    "semantic-release": "semantic-release"
   },
   "version": "1.0.0"
 }
