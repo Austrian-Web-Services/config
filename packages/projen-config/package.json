@@ -37,6 +37,5 @@
   "scripts": {
     "build": "tsup ./src/index.ts --dts",
     "semantic-release": "semantic-release"
-  },
-  "version": "1.0.0"
+  }
 }

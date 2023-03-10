@@ -43,6 +43,5 @@
   "scripts": {
     "build": "exit 0",
     "semantic-release": "semantic-release"
-  },
-  "version": "0.0.1"
+  }
 }
