@@ -23,7 +23,7 @@
     "node": ">=16"
   },
   "files": [
-    "tsconfig.json"
+    "base.json"
   ],
   "publishConfig": {
     "access": "public",
