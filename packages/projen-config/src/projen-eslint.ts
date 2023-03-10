@@ -41,9 +41,9 @@ export class EslintConfig {
     }
 
     new JsonFile(project, filePath, {
+      marker: false,
       obj: {
         extends: ['@atws/eslint-config'],
-        marker: false,
         overrides,
         root: true,
       },
