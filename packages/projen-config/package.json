@@ -36,7 +36,7 @@
   },
   "scripts": {
     "build": "tsup ./src/index.ts --dts",
-    "semantic-release": "yarn run build && semantic-release"
+    "semantic-release": "semantic-release"
   },
   "version": "1.0.0"
 }

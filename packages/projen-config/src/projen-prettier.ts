@@ -1,12 +1,28 @@
-import { DependencyType, type Project, TextFile } from 'projen'
+import { DependencyType, type FileBase, type Project, TextFile } from 'projen'
 
-export const PrettierConfig = (project: Project) => {
-  project.tryRemoveFile('.prettierrc.js')
+const filePath = '.prettierrc.js'
 
-  new TextFile(project, '.prettierrc.js', {
-    lines: ['module.exports = {', `  ...require('@atws/prettier-config')`, '}'],
-  })
+export class PrettierConfig {
+  private readonly project: Project
 
-  project.deps.addDependency('@atws/prettier-config', DependencyType.DEVENV)
-  project.deps.addDependency('prettier', DependencyType.DEVENV)
+  public constructor(project: Project) {
+    this.project = project
+
+    project.tryRemoveFile(filePath)
+
+    new TextFile(project, filePath, {
+      lines: [
+        'module.exports = {',
+        `  ...require('@atws/prettier-config')`,
+        '}',
+      ],
+    })
+
+    project.deps.addDependency('@atws/prettier-config', DependencyType.DEVENV)
+    project.deps.addDependency('prettier', DependencyType.DEVENV)
+  }
+
+  public getFile = () => {
+    return this.project.tryFindFile(filePath) as FileBase
+  }
 }

@@ -20,5 +20,5 @@ const { PrettierConfig } = require("@atws/projen-config");
 
 const project = new awscdk.AwsCdkConstructLibrary({ ... });
 
-PrettierConfig(project);
+new PrettierConfig(project);
 ```
