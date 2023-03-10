@@ -31,12 +31,11 @@
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0"
   },
-  "devDependencies": {
+  "dependencies": {
     "eslint-config-canonical": "^40.0.7",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-security": "^1.7.1",
-    "prettier": "^2.8.4"
+    "eslint-plugin-security": "^1.7.1"
   },
   "files": [
     "index.js",
