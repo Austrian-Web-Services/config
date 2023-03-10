@@ -11,3 +11,14 @@ Install the package:
 ```bash
 yarn add -D @atws/projen-config
 ```
+
+Add to your `projenrc.js` file:
+
+```js
+const { awscdk } = require("projen");
+const { PrettierConfig } = require("@atws/projen-config");
+
+const project = new awscdk.AwsCdkConstructLibrary({ ... });
+
+PrettierConfig(project);
+```
