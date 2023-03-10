@@ -17,3 +17,8 @@ Create a tsconfig.json file in the root of your project and extend the base conf
   "extends": "@atws/tsconfig/base"
 }
 ```
+
+## Variants
+
+There are a few variants of the base config that can be used to extend the base config.
+

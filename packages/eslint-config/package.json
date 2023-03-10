@@ -21,9 +21,6 @@
   "engines": {
     "node": ">=16"
   },
-  "directories": {
-    "lib": "lib"
-  },
   "publishConfig": {
     "access": "public",
     "branches": [
@@ -40,5 +37,10 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-security": "^1.7.1",
     "prettier": "^2.8.4"
-  }
+  },
+  "files": [
+    "index.js",
+    "cdk.js",
+    "react.js"
+  ]
 }
