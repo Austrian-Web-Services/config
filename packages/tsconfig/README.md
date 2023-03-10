@@ -14,11 +14,22 @@ Create a tsconfig.json file in the root of your project and extend the base conf
 
 ```json
 {
-  "extends": "@atws/tsconfig/base"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@atws/tsconfig/base",
+  "include": ["src/**/*.{ts,tsx}"]
 }
 ```
 
 ## Variants
 
-There are a few variants of the base config that can be used to extend the base config.
+There are additional variants of the base config that can be used to extend the base config.
 
+### React
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@atws/tsconfig/react",
+  "include": ["src/**/*.{ts,tsx}"]
+}
+```

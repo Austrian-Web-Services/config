@@ -1,25 +1,31 @@
 {
-  "name": "@atws/config",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Austrian-Web-Services/config.git",
   "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "license": "MIT",
-  "scripts": {
-    "release": "yarn workspaces run semantic-release"
+  "dependencies": {
+    "eslint": "^8.35.0",
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "semantic-release": "19.0.5",
     "semantic-release-monorepo": "^7.0.5"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@atws/config",
   "private": true,
   "release": {
     "branches": [
       "main"
     ],
     "extends": "semantic-release-monorepo"
-  }
+  },
+  "repository": "https://github.com/Austrian-Web-Services/config.git",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint --cache --fix .",
+    "release": "yarn workspaces run semantic-release"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ]
 }

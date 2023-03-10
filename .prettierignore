@@ -1,0 +1,14 @@
+.*/*
+node_modules
+web-build
+android
+ios
+fastlane
+*.config.json
+web
+package.json
+package-lock.json
+yarn.lock
+dist
+generated
+coverage

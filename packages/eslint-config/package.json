@@ -1,25 +1,34 @@
 {
-  "name": "@atws/eslint-config",
-  "version": "0.0.1",
-  "description": "An opinionated base setup of eslint",
-  "scripts": {
-    "semantic-release": "semantic-release"
-  },
-  "keywords": [
-    "eslint"
-  ],
   "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "repository": "https://github.com/Austrian-Web-Services/config.git"
-  },
   "bugs": {
     "url": "https://github.com/Austrian-Web-Services/config/issues"
   },
-  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/eslint-config",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint-config-canonical": "^40.0.7",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-canonical": "^4.2.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-security": "^1.7.1"
+  },
+  "description": "An opinionated base setup of eslint",
   "engines": {
     "node": ">=16"
+  },
+  "files": [
+    "index.js",
+    "cdk.js",
+    "react.js"
+  ],
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/eslint-config",
+  "keywords": [
+    "eslint"
+  ],
+  "license": "MIT",
+  "name": "@atws/eslint-config",
+  "peerDependencies": {
+    "eslint": "^8.16.0"
   },
   "publishConfig": {
     "access": "public",
@@ -27,19 +36,12 @@
       "main"
     ]
   },
-  "peerDependencies": {
-    "eslint": "^8.16.0"
+  "repository": {
+    "repository": "https://github.com/Austrian-Web-Services/config.git",
+    "type": "git"
   },
-  "dependencies": {
-    "eslint-config-canonical": "^40.0.7",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-security": "^1.7.1",
-    "@typescript-eslint/parser": "^5.26.0"
+  "scripts": {
+    "semantic-release": "semantic-release"
   },
-  "files": [
-    "index.js",
-    "cdk.js",
-    "react.js"
-  ]
+  "version": "0.0.1"
 }

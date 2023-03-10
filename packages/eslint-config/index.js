@@ -1,9 +1,37 @@
-module.exports = {
-  extends: [
-    'canonical/typescript',
-    'canonical/typescript-type-checking',
-    'plugin:prettier/recommended',
+const typescriptRules = {
+  // improve readability
+  '@typescript-eslint/member-delimiter-style': [
+    'error',
+    {
+      multiline: {
+        delimiter: 'none',
+        requireLast: false,
+      },
+    },
   ],
+
+  // disable due to false positives
+  '@typescript-eslint/no-unnecessary-condition': 'off',
+
+  // no semicolons
+  '@typescript-eslint/semi': ['error', 'never'],
+
+  // set to warn only
+  '@typescript-eslint/strict-boolean-expressions': [
+    'warn',
+    {
+      allowNumber: false,
+      allowString: false,
+    },
+  ],
+
+  // no semicolons
+  semi: ['error', 'never'],
+}
+
+// eslint-disable-next-line no-undef
+module.exports = {
+  extends: ['canonical', 'plugin:prettier/recommended'],
   overrides: [
     {
       extends: [
@@ -15,13 +43,19 @@ module.exports = {
       parserOptions: {
         project: './tsconfig.json',
       },
+      rules: typescriptRules,
     },
     {
-      extends: ['canonical/jest'],
+      extends: [
+        'canonical/jest',
+        'canonical/typescript',
+        'canonical/typescript-type-checking',
+      ],
       files: '*.test.{ts,tsx}',
       parserOptions: {
         project: './tsconfig.json',
       },
+      rules: typescriptRules,
     },
     {
       extends: ['canonical/json', 'plugin:jsonc/prettier'],
@@ -38,9 +72,6 @@ module.exports = {
   ],
   plugins: ['security'],
   rules: {
-    // no semicolons
-    '@babel/semi': ['error', 'never'],
-
     // conflict with prettier
     'canonical/destructuring-property-newline': 'off',
 
@@ -51,9 +82,6 @@ module.exports = {
     'canonical/import-specifier-newline': 'off',
 
     // reducing eslint runtime
-    'import/no-cycle': [2, { ignoreExternal: true, maxDepth: 1 }],
-
-    // reducing eslint runtime
     'import/no-deprecated': 'off',
 
     // allows todo and fixme comments
@@ -61,35 +89,5 @@ module.exports = {
 
     // automatically creates template string literals
     'prefer-template': 'warn',
-
-    // only warn on then/catch/finally
-    'promise/prefer-await-to-then': 'warn',
-
-    // improve readability
-    '@typescript-eslint/member-delimiter-style': [
-      'error',
-      {
-        multiline: {
-          delimiter: 'none',
-          requireLast: false,
-        },
-      },
-    ],
-
-    // no semicolons
-    semi: ['error', 'never'],
-    '@typescript-eslint/semi': ['error', 'never'],
-
-    // disable due to false positives
-    '@typescript-eslint/no-unnecessary-condition': 'off',
-
-    // set to warn only
-    '@typescript-eslint/strict-boolean-expressions': [
-      'warn',
-      {
-        allowNumber: false,
-        allowString: false,
-      },
-    ]
   },
 }
