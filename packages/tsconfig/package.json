@@ -22,9 +22,9 @@
   "engines": {
     "node": ">=16"
   },
-  "files": [
-    "base.json"
-  ],
+  "directories": {
+    "lib": "lib"
+  },
   "publishConfig": {
     "access": "public",
     "branches": [
