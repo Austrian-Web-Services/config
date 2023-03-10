@@ -1,0 +1,34 @@
+{
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "bugs": {
+    "url": "https://github.com/Austrian-Web-Services/config/issues"
+  },
+  "description": "An opinionated base setup of prettier",
+  "engines": {
+    "node": ">=16"
+  },
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/prettier-config",
+  "keywords": [
+    "prettier"
+  ],
+  "license": "MIT",
+  "main": "index.json",
+  "name": "@atws/prettier-config",
+  "peerDependencies": {
+    "prettier": "^2.8.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "main"
+    ]
+  },
+  "repository": {
+    "repository": "https://github.com/Austrian-Web-Services/config.git",
+    "type": "git"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "version": "1.0.0"
+}
