@@ -15,7 +15,7 @@ const typescriptRules = {
   // disable due to false positives
   '@typescript-eslint/no-unnecessary-condition': 'off',
 
-  // no semicolons
+  // disable semicolons
   '@typescript-eslint/semi': ['error', 'never'],
 
   // set to warn only
@@ -27,7 +27,7 @@ const typescriptRules = {
     },
   ],
 
-  // no semicolons
+  // disable semicolons
   semi: ['error', 'never'],
 }
 

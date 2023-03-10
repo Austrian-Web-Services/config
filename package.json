@@ -9,8 +9,7 @@
   "license": "MIT",
   "main": "index.js",
   "name": "@atws/config",
-  "private": true,
-  "release": {
+  "private": true,  "release": {
     "branches": [
       "main"
     ],
