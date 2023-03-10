@@ -5,7 +5,7 @@ module.exports = {
   overrides: [
     {
       extends: ['@atws/eslint-config/cdk'],
-      files: '**/infrastructure/**/*.ts',
+      files: '**/projen-config/**/*.ts',
     },
     {
       extends: ['@atws/eslint-config/react'],
