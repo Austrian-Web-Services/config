@@ -9,6 +9,8 @@ export class PrettierConfig {
     this.project = project
 
     project.tryRemoveFile(filePath)
+    project.tryRemoveFile('.prettierrc')
+    project.tryRemoveFile('.prettierrc.json')
 
     new TextFile(project, filePath, {
       lines: [
