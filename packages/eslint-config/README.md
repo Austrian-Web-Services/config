@@ -7,7 +7,7 @@ This package contains a base setups for eslint.
 Install the package:
 
 ```bash
-yarn add -D @atws/eslint-config
+yarn add -D eslint @atws/eslint-config
 ```
 
 Create a `.eslintrc.js` file in the root of your project and extend the base config.
