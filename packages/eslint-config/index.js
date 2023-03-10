@@ -1,3 +1,5 @@
+/* global module */
+
 const typescriptRules = {
   // improve readability
   '@typescript-eslint/member-delimiter-style': [
@@ -29,7 +31,6 @@ const typescriptRules = {
   semi: ['error', 'never'],
 }
 
-// eslint-disable-next-line no-undef
 module.exports = {
   extends: ['canonical', 'plugin:prettier/recommended'],
   overrides: [

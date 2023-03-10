@@ -1,7 +1,9 @@
 # @atws/eslint-config
 
-This package contains a base setups for eslint, relies on [gajus/eslint-config-canonical
-](https://github.com/gajus/eslint-config-canonical) with some modifications.
+[![npm](https://img.shields.io/npm/v/@atws/eslint-config?style=flat-square)](https://www.npmjs.com/package/@atws/eslint-config)
+
+This package contains extensive eslint rulesets; it is based on [gajus/eslint-config-canonical
+](https://github.com/gajus/eslint-config-canonical) and includes opinionated modifications.
 
 ## Usage
 
@@ -11,8 +13,8 @@ Install `eslint` and the package:
 yarn add -D eslint @atws/eslint-config
 ```
 
-Create a `.eslintrc.js` file in the root of your project and extend the base config.
-Use the `overrides` property to extend the base config for specific files. Alternatively, you can create a separate `.eslintrc.js` file in the directory you want to extend the config for.
+In the root of your project, create a `.eslintrc.js` file and extend the base configuration.
+To extend the base configuration for specific files, use the `overrides` property. You can also create a separate `.eslintrc.js` file in the directory where you want to extend the configuration.
 
 ```js
 /* global module */

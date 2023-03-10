@@ -1,6 +1,8 @@
 # @atws/prettier-config
 
-This package contains a simple base config for prettier.
+[![npm](https://img.shields.io/npm/v/@atws/prettier-config?style=flat-square)](https://www.npmjs.com/package/@atws/prettier-config)
+
+This package contains a simple base config for [prettier](https://prettier.io/).
 
 ## Usage
 

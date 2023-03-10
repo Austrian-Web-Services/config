@@ -1,6 +1,8 @@
 # @atws/tsconfig
 
-This package contains a base tsconfig.json file that can be used as a base for other projects.
+[![npm](https://img.shields.io/npm/v/@atws/tsconfig?style=flat-square)](https://www.npmjs.com/package/@atws/tsconfig)
+
+This package contains a set of tsconfig.json files that can be used as a base for other projects.
 
 ## Usage
 

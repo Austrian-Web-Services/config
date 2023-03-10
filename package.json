@@ -1,12 +1,10 @@
 {
   "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "dependencies": {
-    "eslint": "^8.35.0",
-    "typescript": "^4.9.5"
-  },
   "devDependencies": {
+    "eslint": "^8.35.0",
     "semantic-release": "19.0.5",
-    "semantic-release-monorepo": "^7.0.5"
+    "semantic-release-monorepo": "^7.0.5",
+    "typescript": "^4.9.5"
   },
   "license": "MIT",
   "main": "index.js",
@@ -18,7 +16,10 @@
     ],
     "extends": "semantic-release-monorepo"
   },
-  "repository": "https://github.com/Austrian-Web-Services/config.git",
+  "repository": {
+    "repository": "https://github.com/Austrian-Web-Services/config.git",
+    "type": "git"
+  },
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
