@@ -15,3 +15,4 @@ Organized as a yarn monorepo, this repository contains a collection of configura
 | ------- | ----------- | ------------- |
 | [@atws/tsconfig](/packages/tsconfig) | Opinionated tsconfig setup | ![npm](https://img.shields.io/npm/dm/@atws/tsconfig) |
 | [@atws/eslint-config](/packages/eslint-config) | Extensive eslint ruleset with optimized variants for AWS CDK and React.js | ![npm](https://img.shields.io/npm/dm/@atws/eslint-config) |
+| [@atws/prettier-config](/packages/prettier-config) | Simple prettier base configuration | ![npm](https://img.shields.io/npm/dm/@atws/prettier-config) |
