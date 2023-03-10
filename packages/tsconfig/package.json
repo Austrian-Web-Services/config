@@ -1,0 +1,34 @@
+{
+  "name": "@atws/tsconfig",
+  "version": "0.0.1",
+  "description": "An opinionated base setup of tsconfig.json",
+  "scripts": {},
+  "keywords": [
+    "tsconfig",
+    "tsconfig.json",
+    "typescript",
+    "ts"
+  ],
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Austrian-Web-Services/config/issues"
+  },
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/tsconfig",
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "tsconfig.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "main"
+    ]
+  }
+}

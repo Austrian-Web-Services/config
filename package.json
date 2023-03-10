@@ -1,0 +1,24 @@
+{
+  "name": "@atws/config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Austrian-Web-Services/config.git",
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "license": "MIT",
+  "scripts": {
+    "release": "echo todo",
+    "release:tsconfig": "cd packages/tsconfig && semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "19.0.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}

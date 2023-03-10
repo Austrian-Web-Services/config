@@ -1,0 +1,25 @@
+name: npm publish
+on: [push]
+
+jobs:
+  publish:
+    name: release
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 🚚 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "yarn"
+
+      - name: 💾 Installing packages
+        run: yarn install
+
+      - name: 🚀 Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn run release:tsconfig
