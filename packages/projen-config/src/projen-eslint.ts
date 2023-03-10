@@ -1,6 +1,6 @@
 import { DependencyType, type FileBase, JsonFile, type Project } from 'projen'
 
-const filePath = '.eslintrc.js'
+const filePath = '.eslintrc'
 
 export class EslintConfig {
   private readonly project: Project
@@ -21,7 +21,7 @@ export class EslintConfig {
     this.project = project
 
     project.tryRemoveFile(filePath)
-    project.tryRemoveFile('.eslintrc')
+    project.tryRemoveFile('.eslintrc.js')
     project.tryRemoveFile('.eslintrc.json')
 
     const overrides = []
@@ -42,7 +42,8 @@ export class EslintConfig {
 
     new JsonFile(project, filePath, {
       obj: {
-        extends: ['./packages/eslint-config/index.js'],
+        extends: ['@atws/eslint-config'],
+        marker: false,
         overrides,
         root: true,
       },
