@@ -54,7 +54,7 @@ module.exports = {
         'canonical/typescript-type-checking',
         'plugin:prettier/recommended',
       ],
-      files: '*.ts',
+      files: '*.{ts,tsx}',
       parserOptions: {
         project: './tsconfig.json',
       },
