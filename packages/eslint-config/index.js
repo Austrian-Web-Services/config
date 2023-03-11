@@ -32,7 +32,7 @@ const typescriptRules = {
 }
 
 module.exports = {
-  extends: ['canonical', 'canonical/prettier', 'plugin:prettier/recommended'],
+  extends: ['canonical', 'plugin:prettier/recommended'],
   ignorePatterns: [
     '**/node_modules/**',
     '**/dist/**',
@@ -81,6 +81,12 @@ module.exports = {
   ],
   plugins: ['security'],
   rules: {
+    // conflict with prettier
+    '@typescript-eslint/comma-dangle': 'off',
+
+    // conflict with prettier
+    '@typescript-eslint/quotes': 'off',
+
     // conflict with prettier
     'canonical/destructuring-property-newline': 'off',
 
