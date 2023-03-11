@@ -34,5 +34,5 @@
     "**/cdk.out": true,
     "**/.cache": true,
     "package-lock.json": true
-  },
+  }
 }

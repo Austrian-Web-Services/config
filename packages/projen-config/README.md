@@ -57,12 +57,24 @@ new EslintConfig(project, {
 
 ### Setup a VS Code workspace settings file
 
-Add a `.vscode/settings.json` file to the project. It defines some standard search exclusions and enables `formatOnSave`.
+Add a `.vscode/settings.json` and `.vscode/extensions.json` file to the project. It defines some standard search exclusions and enables `formatOnSave`. The extensions file is used to recommend extensions that should be installed for the project.
 
 ```js
 new VscodeConfig(project, {
   additionalSearchExclusion: {
     '**/public': true,
+  },
+  additionalSettings: {
+    'editor.stickyScroll.enabled': true,
+  },
+  vscodeExtensions: {
+    addCdkExtensions: true,
+    addCoreExtensions: true,
+    additionalExtensions: ['ms-azuretools.vscode-docker'],
+    addNodeExtensions: true,
+    addProductivityExtensions: true,
+    addReactExtensions: true,
+    addTailwindCSSExtensions: true,
   },
 })
 ```
