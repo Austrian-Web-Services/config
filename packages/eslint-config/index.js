@@ -32,7 +32,7 @@ const typescriptRules = {
 }
 
 module.exports = {
-  extends: ['canonical', 'plugin:prettier/recommended'],
+  extends: ['canonical', 'canonical/prettier', 'plugin:prettier/recommended'],
   ignorePatterns: [
     '**/node_modules/**',
     '**/dist/**',
