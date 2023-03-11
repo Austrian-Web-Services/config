@@ -1,6 +1,13 @@
-import { DependencyType, type FileBase, JsonFile, type Project } from 'projen'
+import {
+  DependencyType,
+  type FileBase,
+  JsonFile,
+  type Project,
+  TextFile,
+} from 'projen'
 
-const filePath = '.eslintrc'
+const configFilePath = '.eslintrc'
+const ignoreFilePath = '.eslintignore'
 
 export class EslintConfig {
   private readonly project: Project
@@ -13,6 +20,10 @@ export class EslintConfig {
        */
       cdkFileRegex?: string
       /**
+       * List of paths to ignore when linting
+       */
+      ignorePaths?: string[]
+      /**
        * Regex to match files that should be linted with React rules
        */
       reactFileRegex?: string
@@ -20,9 +31,10 @@ export class EslintConfig {
   ) {
     this.project = project
 
-    project.tryRemoveFile(filePath)
+    project.tryRemoveFile(configFilePath)
     project.tryRemoveFile('.eslintrc.js')
     project.tryRemoveFile('.eslintrc.json')
+    project.tryRemoveFile(ignoreFilePath)
 
     const overrides = []
 
@@ -40,7 +52,7 @@ export class EslintConfig {
       })
     }
 
-    new JsonFile(project, filePath, {
+    new JsonFile(project, configFilePath, {
       marker: false,
       obj: {
         extends: ['@atws/eslint-config'],
@@ -51,9 +63,25 @@ export class EslintConfig {
 
     project.deps.addDependency('@atws/eslint-config', DependencyType.DEVENV)
     project.deps.addDependency('eslint', DependencyType.DEVENV)
+
+    new TextFile(project, ignoreFilePath, {
+      lines: [
+        '.*/*',
+        'generated',
+        'coverage',
+        '.eslintrc.js',
+        '*.png',
+        'tsconfig.json',
+        ...(options?.ignorePaths ?? []),
+      ],
+      marker: false,
+    })
   }
 
-  public getFile = () => {
-    return this.project.tryFindFile(filePath) as FileBase
+  public getFiles = () => {
+    return {
+      eslintConfig: this.project.tryFindFile(configFilePath) as FileBase,
+      eslintIgnore: this.project.tryFindFile(ignoreFilePath) as FileBase,
+    }
   }
 }
