@@ -5,7 +5,7 @@
   },
   "description": "An opinionated base setup of tsconfig.json",
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "files": ["base.json", "react.json"],
   "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/tsconfig",
