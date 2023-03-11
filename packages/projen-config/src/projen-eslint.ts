@@ -24,6 +24,10 @@ export class EslintConfig {
        */
       ignorePaths?: string[]
       /**
+       * Regex to match files that should be linted with [projen](https://projen.io) rules
+       */
+      projenFileRegex?: string
+      /**
        * Regex to match files that should be linted with React rules
        */
       reactFileRegex?: string
@@ -49,6 +53,13 @@ export class EslintConfig {
       overrides.push({
         extends: ['@atws/eslint-config/react'],
         files: options.reactFileRegex,
+      })
+    }
+
+    if (options?.projenFileRegex !== undefined) {
+      overrides.push({
+        extends: ['@atws/eslint-config/projen'],
+        files: options.projenFileRegex,
       })
     }
 
