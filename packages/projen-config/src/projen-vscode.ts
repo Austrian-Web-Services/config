@@ -149,7 +149,10 @@ export class VscodeConfig {
 
     new JsonFile(project, vscodeExtensionsFilePath, {
       obj: {
-        recommendations: extensions,
+        recommendations: [
+          ...extensions,
+          ...(options?.vscodeExtensions?.additionalExtensions ?? []),
+        ],
         unwantedRecommendations: options?.vscodeExtensions?.unwantedExtensions,
       },
     })
