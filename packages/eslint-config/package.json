@@ -18,7 +18,8 @@
   "files": [
     "index.js",
     "cdk.js",
-    "react.js"
+    "react.js",
+    "projen.js"
   ],
   "scripts": {
     "build": "exit 0",

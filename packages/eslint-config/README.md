@@ -49,6 +49,16 @@ Disable rules that conflict with common CDK patterns.
 }
 ```
 
+### Projen
+
+Disable rules that conflic with the [projen](https://projen.io) [jsii](https://github.com/aws/jsii) compiler.
+
+```js
+{
+  extends: ['@atws/eslint-config/projen']
+}
+```
+
 ### React
 
 Add rules for React projects.
