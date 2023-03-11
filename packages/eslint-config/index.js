@@ -104,5 +104,8 @@ module.exports = {
 
     // automatically creates template string literals
     'prefer-template': 'warn',
+
+    // allow `Promise.then`
+    'promise/prefer-await-to-then': 'off',
   },
 }
