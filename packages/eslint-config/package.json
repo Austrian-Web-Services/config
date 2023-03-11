@@ -14,7 +14,7 @@
   },
   "description": "An opinionated base setup of eslint",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "files": [
     "index.js",
