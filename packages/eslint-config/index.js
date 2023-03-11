@@ -1,6 +1,9 @@
 /* global module */
 
 const typescriptRules = {
+  // conflict with prettier
+  '@typescript-eslint/comma-dangle': 'off',
+
   // improve readability
   '@typescript-eslint/member-delimiter-style': [
     'error',
@@ -14,6 +17,9 @@ const typescriptRules = {
 
   // disable due to false positives
   '@typescript-eslint/no-unnecessary-condition': 'off',
+
+  // conflict with prettier
+  '@typescript-eslint/quotes': 'off',
 
   // disable semicolons
   '@typescript-eslint/semi': ['error', 'never'],
@@ -81,12 +87,6 @@ module.exports = {
   ],
   plugins: ['security'],
   rules: {
-    // conflict with prettier
-    '@typescript-eslint/comma-dangle': 'off',
-
-    // conflict with prettier
-    '@typescript-eslint/quotes': 'off',
-
     // conflict with prettier
     'canonical/destructuring-property-newline': 'off',
 
