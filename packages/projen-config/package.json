@@ -1,42 +1,42 @@
 {
-  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "name": "@atws/projen-config",
+  "version": "1.0.0",
+  "description": "A set of extensions for projen projects",
+  "keywords": [
+    "projen"
+  ],
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/projen-config",
   "bugs": {
     "url": "https://github.com/Austrian-Web-Services/config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
+  },
+  "license": "MIT",
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "projen": "^0.67.80",
     "typescript": "^4.9.5"
   },
-  "description": "A set of extensions for projen projects",
   "devDependencies": {
     "tsup": "^6.6.3"
   },
   "engines": {
     "node": ">=16"
   },
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/projen-config",
-  "keywords": [
-    "projen"
-  ],
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "@atws/projen-config",
   "publishConfig": {
     "access": "public",
     "branches": [
       "main"
     ]
-  },
-  "repository": {
-    "repository": "https://github.com/Austrian-Web-Services/config.git",
-    "type": "git"
-  },
-  "scripts": {
-    "build": "tsup --config tsup.config.ts",
-    "semantic-release": "semantic-release"
-  },
-  "version": "1.0.0"
+  }
 }

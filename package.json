@@ -1,32 +1,34 @@
 {
-  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "devDependencies": {
-    "eslint": "^8.35.0",
-    "semantic-release": "19.0.5",
-    "semantic-release-monorepo": "^7.0.5",
-    "typescript": "^4.9.5"
+  "name": "@atws/config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A monorepo for shared configuration files.",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
   },
   "license": "MIT",
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
   "main": "index.js",
-  "name": "@atws/config",
-  "private": true,  "release": {
-    "branches": [
-      "main"
-    ],
-    "extends": "semantic-release-monorepo"
-  },
-  "repository": {
-    "repository": "https://github.com/Austrian-Web-Services/config.git",
-    "type": "git"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "yarn workspaces run build",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
     "release": "yarn workspaces run semantic-release"
   },
-  "version": "1.0.0",
-  "workspaces": [
-    "packages/*"
-  ]
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "extends": "semantic-release-monorepo"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "semantic-release": "19.0.5",
+    "semantic-release-monorepo": "^7.0.5",
+    "typescript": "^4.9.5"
+  }
 }

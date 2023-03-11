@@ -1,35 +1,38 @@
 {
-  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "bugs": {
-    "url": "https://github.com/Austrian-Web-Services/config/issues"
-  },
+  "name": "@atws/tsconfig",
+  "version": "1.0.0",
   "description": "An opinionated base setup of tsconfig.json",
-  "engines": {
-    "node": ">=16"
-  },
-  "files": ["base.json", "react.json"],
-  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/tsconfig",
   "keywords": [
     "tsconfig",
     "tsconfig.json",
     "typescript",
     "ts"
   ],
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/tsconfig",
+  "bugs": {
+    "url": "https://github.com/Austrian-Web-Services/config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
+  },
   "license": "MIT",
-  "name": "@atws/tsconfig",
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "files": [
+    "base.json",
+    "react.json"
+  ],
+  "scripts": {
+    "build": "exit 0",
+    "semantic-release": "semantic-release"
+  },
+  "engines": {
+    "node": ">=16"
+  },
   "publishConfig": {
     "access": "public",
     "branches": [
       "main"
     ]
-  },
-  "repository": {
-    "repository": "https://github.com/Austrian-Web-Services/config.git",
-    "type": "git"
-  },
-  "scripts": {
-    "build": "exit 0",
-    "semantic-release": "semantic-release"
-  },
-  "version": "1.0.0"
+  }
 }
