@@ -4,6 +4,9 @@ const typescriptRules = {
   // conflict with prettier
   '@typescript-eslint/comma-dangle': 'off',
 
+  // conflict with prettier
+  '@typescript-eslint/indent': 'off',
+
   // improve readability
   '@typescript-eslint/member-delimiter-style': [
     'error',
@@ -14,6 +17,9 @@ const typescriptRules = {
       },
     },
   ],
+
+  // false positives when reutrn type is `void | Promise<void>`
+  '@typescript-eslint/no-misused-promises': 'off',
 
   // disable due to false positives
   '@typescript-eslint/no-unnecessary-condition': 'off',
@@ -32,6 +38,12 @@ const typescriptRules = {
       allowString: false,
     },
   ],
+
+  // false positives for `libphonenumber-js`
+  'import/no-named-as-default': 'off',
+
+  // common cause of bugs due to unawareness of deletion
+  'no-useless-return': 'off',
 
   // disable semicolons
   semi: ['error', 'never'],
