@@ -78,3 +78,20 @@ new VscodeConfig(project, {
   },
 })
 ```
+
+### Setup a `.gitattributes` file
+
+Modify the `.gitattributes` file to use LF line endings for all files, use binary encoding and treat VSCode settings files as JSON5.
+
+```js
+new GitConfig(project, {
+  gitAttributes: {
+    additionalLines: [
+      {
+        glob: '/packages/api/generated/**',
+        attribute: 'linguist-generated',
+      },
+    ],
+  },
+})
+```
