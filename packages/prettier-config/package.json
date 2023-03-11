@@ -31,5 +31,8 @@
     "build": "exit 0",
     "semantic-release": "semantic-release"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "prettier-plugin-packagejson": "^2.4.3"
+  }
 }

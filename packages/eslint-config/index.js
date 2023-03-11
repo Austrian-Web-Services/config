@@ -33,6 +33,14 @@ const typescriptRules = {
 
 module.exports = {
   extends: ['canonical', 'plugin:prettier/recommended'],
+  ignorePatterns: [
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/build/**',
+    'package-lock.json',
+    '*.lock',
+    'package.json',
+  ],
   overrides: [
     {
       extends: [

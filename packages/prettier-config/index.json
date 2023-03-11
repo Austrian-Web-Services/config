@@ -4,6 +4,7 @@
   "bracketSameLine": false,
   "endOfLine": "lf",
   "jsxSingleQuote": true,
+  "plugins": ["prettier-plugin-packagejson"],
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
