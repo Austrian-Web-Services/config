@@ -38,7 +38,7 @@ module.exports = {
 }
 ```
 
-Create a `.eslintrc.js` in your project root. You can use [@atws/prettier-config](https://www.npmjs.com/package/@atws/prettier-config) to get started with prettier.
+Create a `.prettierrc.js` in your project root. You can use [@atws/prettier-config](https://www.npmjs.com/package/@atws/prettier-config) to get started with prettier.
 
 ```js
 module.exports = {
