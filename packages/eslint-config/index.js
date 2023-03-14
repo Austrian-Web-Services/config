@@ -47,10 +47,13 @@ const typescriptRules = {
 
   // disable semicolons
   semi: ['error', 'never'],
+
+  // conflict with prettier
+  't@typescript-eslint/space-before-function-paren': 'off',
 }
 
 module.exports = {
-  extends: ['canonical', 'plugin:prettier/recommended'],
+  extends: ['canonical', 'prettier'],
   ignorePatterns: [
     '**/node_modules/**',
     '**/dist/**',
@@ -61,11 +64,7 @@ module.exports = {
   ],
   overrides: [
     {
-      extends: [
-        'canonical/typescript',
-        'canonical/typescript-type-checking',
-        'plugin:prettier/recommended',
-      ],
+      extends: ['canonical/typescript', 'canonical/typescript-type-checking'],
       files: '*.{ts,tsx}',
       parserOptions: {
         project: './tsconfig.json',
@@ -100,8 +99,11 @@ module.exports = {
       files: '*.graphql',
     },
   ],
-  plugins: ['security'],
+  plugins: ['security', 'prettier'],
   rules: {
+    // conflict with prettier
+    'arrow-body-style': 'off',
+
     // conflict with prettier
     'canonical/destructuring-property-newline': 'off',
 
@@ -117,8 +119,14 @@ module.exports = {
     // allows todo and fixme comments
     'no-warning-comments': 'off',
 
+    // conflict with prettier
+    'prefer-arrow-callback': 'off',
+
     // automatically creates template string literals
     'prefer-template': 'warn',
+
+    // configure prettier
+    'prettier/prettier': ['error'],
 
     // allow `Promise.then`
     'promise/prefer-await-to-then': 'off',

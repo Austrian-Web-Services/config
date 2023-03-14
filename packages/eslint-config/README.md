@@ -10,11 +10,14 @@ This package contains extensive eslint rulesets; it is based on [gajus/eslint-co
 Install `eslint` and the package:
 
 ```bash
-yarn add -D eslint @atws/eslint-config
+yarn add -D eslint @atws/eslint-config prettier
 ```
 
-In the root of your project, create a `.eslintrc.js` file and extend the base configuration.
+In the root of your project, create a `.eslintrc.js` file and extend the base configuration. The eslint config relies on  [prettier](https://prettier.io) for formatting, so make sure to install and configure it as well.
+
 To extend the base configuration for specific files, use the `overrides` property. You can also create a separate `.eslintrc.js` file in the directory where you want to extend the configuration.
+
+Create a `.eslintrc.js` in your project root
 
 ```js
 /* global module */
@@ -32,6 +35,14 @@ module.exports = {
     },
   ],
   root: true,
+}
+```
+
+Create a `.eslintrc.js` in your project root. You can use [@atws/prettier-config](https://www.npmjs.com/package/@atws/prettier-config) to get started with prettier.
+
+```js
+module.exports = {
+  ...require("@atws/prettier-config")
 }
 ```
 
