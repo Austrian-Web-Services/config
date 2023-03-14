@@ -82,7 +82,10 @@ module.exports = {
       parserOptions: {
         project: './tsconfig.json',
       },
-      rules: typescriptRules,
+      rules: {
+        ...typescriptRules,
+        '@typescript-eslint/no-floating-promises': 'off',
+      },
     },
     {
       extends: ['canonical/json', 'plugin:jsonc/prettier'],
