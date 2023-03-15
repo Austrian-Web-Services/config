@@ -18,6 +18,9 @@ const typescriptRules = {
     },
   ],
 
+  // conflict with prettier
+  '@typescript-eslint/no-extra-parens': 'off',
+
   // false positives when reutrn type is `void | Promise<void>`
   '@typescript-eslint/no-misused-promises': 'off',
 
@@ -29,6 +32,9 @@ const typescriptRules = {
 
   // disable semicolons
   '@typescript-eslint/semi': ['error', 'never'],
+
+  // conflict with prettier
+  '@typescript-eslint/space-before-function-paren': 'off',
 
   // set to warn only
   '@typescript-eslint/strict-boolean-expressions': [
@@ -47,9 +53,6 @@ const typescriptRules = {
 
   // disable semicolons
   semi: ['error', 'never'],
-
-  // conflict with prettier
-  't@typescript-eslint/space-before-function-paren': 'off',
 }
 
 module.exports = {
