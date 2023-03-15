@@ -2,6 +2,7 @@ import {
   DependencyType,
   type FileBase,
   JsonFile,
+  type ObjectFile,
   type Project,
   TextFile,
 } from 'projen'
@@ -91,7 +92,9 @@ export class EslintConfig {
 
   public getFiles = () => {
     return {
-      eslintConfig: this.project.tryFindFile(configFilePath) as FileBase,
+      eslintConfig: this.project.tryFindObjectFile(
+        configFilePath
+      ) as ObjectFile,
       eslintIgnore: this.project.tryFindFile(ignoreFilePath) as FileBase,
     }
   }

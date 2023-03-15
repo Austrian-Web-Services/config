@@ -3,7 +3,13 @@ import editorConfig from '../../../.editorconfig'
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore: load from workspace root
 import vscodeSettings from '../../../.vscode/settings.json'
-import { type FileBase, JsonFile, type Project, TextFile } from 'projen'
+import {
+  type FileBase,
+  JsonFile,
+  type ObjectFile,
+  type Project,
+  TextFile,
+} from 'projen'
 
 const vscodeSettingsFilePath = '.vscode/settings.json'
 const editorConfigFilePath = '.editorconfig'
@@ -161,10 +167,10 @@ export class VscodeConfig {
   public getFiles = () => {
     return {
       editorConfig: this.project.tryFindFile(editorConfigFilePath) as FileBase,
-      extensions: this.project.tryFindFile(
+      extensions: this.project.tryFindObjectFile(
         vscodeExtensionsFilePath
-      ) as FileBase,
-      settings: this.project.tryFindFile(vscodeSettingsFilePath) as FileBase,
+      ) as ObjectFile,
+      settings: this.project.tryFindFile(vscodeSettingsFilePath) as ObjectFile,
     }
   }
 }
