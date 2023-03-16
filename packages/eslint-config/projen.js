@@ -22,14 +22,6 @@ module.exports = {
      * Upon compilation, projen will complain anyway if a depencies are
      * not declared correctly.
      */
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        bundledDependencies: false,
-        devDependencies: false,
-        optionalDependencies: true,
-        peerDependencies: false,
-      },
-    ],
+    'import/no-extraneous-dependencies': 'off',
   },
 }
