@@ -62,6 +62,7 @@ export class EslintConfig {
       overrides.push({
         extends: ['@atws/eslint-config/projen'],
         files: options.projenFileRegex,
+        project: './tsconfig.dev.json',
       })
     }
 
