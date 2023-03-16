@@ -1,3 +1,4 @@
+import { type AnyProject } from './types'
 import {
   DependencyType,
   type FileBase,
@@ -14,7 +15,7 @@ export class EslintConfig {
   private readonly project: Project
 
   public constructor(
-    project: Project,
+    project: AnyProject,
     options?: {
       /**
        * Regex to match files that should be linted with CDK rules
@@ -34,12 +35,12 @@ export class EslintConfig {
       reactFileRegex?: string
     }
   ) {
-    this.project = project
+    this.project = project as Project
 
-    project.tryRemoveFile(configFilePath)
-    project.tryRemoveFile('.eslintrc.js')
-    project.tryRemoveFile('.eslintrc.json')
-    project.tryRemoveFile(ignoreFilePath)
+    this.project.tryRemoveFile(configFilePath)
+    this.project.tryRemoveFile('.eslintrc.js')
+    this.project.tryRemoveFile('.eslintrc.json')
+    this.project.tryRemoveFile(ignoreFilePath)
 
     const overrides = []
 
@@ -64,7 +65,7 @@ export class EslintConfig {
       })
     }
 
-    new JsonFile(project, configFilePath, {
+    new JsonFile(this.project, configFilePath, {
       marker: false,
       obj: {
         extends: ['@atws/eslint-config'],
@@ -73,10 +74,13 @@ export class EslintConfig {
       },
     })
 
-    project.deps.addDependency('@atws/eslint-config', DependencyType.DEVENV)
-    project.deps.addDependency('eslint', DependencyType.DEVENV)
+    this.project.deps.addDependency(
+      '@atws/eslint-config',
+      DependencyType.DEVENV
+    )
+    this.project.deps.addDependency('eslint', DependencyType.DEVENV)
 
-    new TextFile(project, ignoreFilePath, {
+    new TextFile(this.project, ignoreFilePath, {
       lines: [
         '.*/*',
         'generated',

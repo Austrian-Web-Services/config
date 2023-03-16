@@ -1,3 +1,4 @@
+import { type AnyProject } from './types'
 import { type Project } from 'projen'
 
 /**
@@ -27,20 +28,20 @@ export class GitConfig {
   private readonly project: Project
 
   public constructor(
-    project: Project,
+    project: AnyProject,
     options?: {
       gitAttributes?: {
         additionalLines?: GitAttributeEntry[]
       }
     }
   ) {
-    this.project = project
+    this.project = project as Project
 
     for (const item of [
       ...gitAttributesContent,
       ...(options?.gitAttributes?.additionalLines ?? []),
     ]) {
-      project.gitattributes.addAttributes(item.glob, item.attribute)
+      this.project.gitattributes.addAttributes(item.glob, item.attribute)
     }
   }
 }

@@ -1,3 +1,4 @@
+import { type AnyProject } from './types'
 import { DependencyType, type FileBase, type Project, TextFile } from 'projen'
 
 const filePath = '.prettierrc.js'
@@ -5,14 +6,14 @@ const filePath = '.prettierrc.js'
 export class PrettierConfig {
   private readonly project: Project
 
-  public constructor(project: Project) {
-    this.project = project
+  public constructor(project: AnyProject) {
+    this.project = project as Project
 
-    project.tryRemoveFile(filePath)
-    project.tryRemoveFile('.prettierrc')
-    project.tryRemoveFile('.prettierrc.json')
+    this.project.tryRemoveFile(filePath)
+    this.project.tryRemoveFile('.prettierrc')
+    this.project.tryRemoveFile('.prettierrc.json')
 
-    new TextFile(project, filePath, {
+    new TextFile(this.project, filePath, {
       lines: [
         'module.exports = {',
         `  ...require('@atws/prettier-config')`,
@@ -20,8 +21,11 @@ export class PrettierConfig {
       ],
     })
 
-    project.deps.addDependency('@atws/prettier-config', DependencyType.DEVENV)
-    project.deps.addDependency('prettier', DependencyType.DEVENV)
+    this.project.deps.addDependency(
+      '@atws/prettier-config',
+      DependencyType.DEVENV
+    )
+    this.project.deps.addDependency('prettier', DependencyType.DEVENV)
   }
 
   public getFile = () => {

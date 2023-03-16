@@ -3,6 +3,7 @@ import editorConfig from '../../../.editorconfig'
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore: load from workspace root
 import vscodeSettings from '../../../.vscode/settings.json'
+import { type AnyProject } from './types'
 import {
   type FileBase,
   JsonFile,
@@ -19,7 +20,7 @@ export class VscodeConfig {
   private readonly project: Project
 
   public constructor(
-    project: Project,
+    project: AnyProject,
     options?: {
       /**
        * List of additional files to exclude or override from search and watcher
@@ -75,7 +76,7 @@ export class VscodeConfig {
       }
     }
   ) {
-    this.project = project
+    this.project = project as Project
 
     if (options?.additionalSearchExclusion) {
       Object.assign(
@@ -88,12 +89,12 @@ export class VscodeConfig {
       )
     }
 
-    new JsonFile(project, vscodeSettingsFilePath, {
+    new JsonFile(this.project, vscodeSettingsFilePath, {
       marker: false,
       obj: vscodeSettings,
     })
 
-    new TextFile(project, editorConfigFilePath, {
+    new TextFile(this.project, editorConfigFilePath, {
       lines: editorConfig.split('\n'),
     })
 
@@ -153,7 +154,7 @@ export class VscodeConfig {
       )
     }
 
-    new JsonFile(project, vscodeExtensionsFilePath, {
+    new JsonFile(this.project, vscodeExtensionsFilePath, {
       obj: {
         recommendations: [
           ...extensions,

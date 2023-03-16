@@ -12,13 +12,20 @@ Install the package:
 yarn add -D @atws/projen-config
 ```
 
-Add to your `projenrc.js` file:
+Add to your `.projenrc.ts` file:
 
-```js
-const { awscdk } = require("projen")
-const { PrettierConfig, EslintConfig, VscodeConfig } = require("@atws/projen-config")
+```ts
+import { awscdk } from 'projen'
+import {
+  PrettierConfig,
+  EslintConfig,
+  VscodeConfig,
+  GitConfig,
+} from "@atws/projen-config"
 
-const project = new awscdk.AwsCdkConstructLibrary({ ... })
+const project = new awscdk.AwsCdkConstructLibrary({ 
+  devDeps: ["@atws/projen-config"],
+})
 
 new PrettierConfig(project)
 
@@ -32,6 +39,8 @@ new VscodeConfig(project, {
     '**/public': true,
   },
 })
+
+new GitConfig(project)
 ```
 
 ## Features
@@ -40,7 +49,7 @@ new VscodeConfig(project, {
 
 An opinionated base config for prettier. In contrast to the default config, it uses single quotes, adds a trailing comma to objects and arrays and does not use semicolons at the end.
 
-```js
+```ts
 new PrettierConfig(project)
 ```
 
@@ -48,7 +57,7 @@ new PrettierConfig(project)
 
 Add an opinionated base config for eslint. It allows to specify the file regex for projects that use AWS CDK and/or React.
 
-```js
+```ts
 new EslintConfig(project, {
   cdkFileRegex: "**/src/**/*.ts",
   reactFileRegex: "**/webapp/**/*.{ts,tsx}",
@@ -59,7 +68,7 @@ new EslintConfig(project, {
 
 Add a `.vscode/settings.json` and `.vscode/extensions.json` file to the project. It defines some standard search exclusions and enables `formatOnSave`. The extensions file is used to recommend extensions that should be installed for the project.
 
-```js
+```ts
 new VscodeConfig(project, {
   additionalSearchExclusion: {
     '**/public': true,
@@ -83,7 +92,7 @@ new VscodeConfig(project, {
 
 Modify the `.gitattributes` file to use LF line endings for all files, use binary encoding and treat VSCode settings files as JSON5.
 
-```js
+```ts
 new GitConfig(project, {
   gitAttributes: {
     additionalLines: [
