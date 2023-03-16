@@ -105,7 +105,8 @@ export class VscodeConfig {
         'dbaeumer.vscode-eslint',
         'EditorConfig.EditorConfig',
         'esbenp.prettier-vscode',
-        'vscode-icons-team.vscode-icons'
+        'vscode-icons-team.vscode-icons',
+        'MarkMcCulloh.vscode-projen'
       )
     }
 
