@@ -97,6 +97,7 @@ export class EslintConfig {
           '.eslintrc.js',
           '*.png',
           'tsconfig.json',
+          'tsconfig.*.json',
           ...additionalIgnorePaths,
           ...(options?.ignorePaths ?? []),
         ],
