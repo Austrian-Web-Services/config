@@ -1,0 +1,10 @@
+*.pbxproj binary merge=union
+/.husky/** linguist-vendored
+/.yarn/** linguist-vendored
+/.pnp.* binary linguist-generated
+/.yarn/releases/** binary
+/.yarn/plugins/** binary
+/.vscode/*.json linguist-language=JSON5
+* text=auto eol=lf
+*.png binary
+/packages/api/generated/** linguist-generated

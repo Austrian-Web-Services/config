@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "endOfLine": "lf",
+  "jsxSingleQuote": true,
+  "plugins": ["prettier-plugin-packagejson"],
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false
+}
