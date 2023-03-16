@@ -89,14 +89,18 @@ export class VscodeConfig {
       )
     }
 
-    new JsonFile(this.project, vscodeSettingsFilePath, {
-      marker: false,
-      obj: vscodeSettings,
-    })
+    this.project.files.push(
+      new JsonFile(this.project, vscodeSettingsFilePath, {
+        marker: false,
+        obj: vscodeSettings,
+      })
+    )
 
-    new TextFile(this.project, editorConfigFilePath, {
-      lines: editorConfig.split('\n'),
-    })
+    this.project.files.push(
+      new TextFile(this.project, editorConfigFilePath, {
+        lines: editorConfig.split('\n'),
+      })
+    )
 
     const extensions = []
 
@@ -155,15 +159,18 @@ export class VscodeConfig {
       )
     }
 
-    new JsonFile(this.project, vscodeExtensionsFilePath, {
-      obj: {
-        recommendations: [
-          ...extensions,
-          ...(options?.vscodeExtensions?.additionalExtensions ?? []),
-        ],
-        unwantedRecommendations: options?.vscodeExtensions?.unwantedExtensions,
-      },
-    })
+    this.project.files.push(
+      new JsonFile(this.project, vscodeExtensionsFilePath, {
+        obj: {
+          recommendations: [
+            ...extensions,
+            ...(options?.vscodeExtensions?.additionalExtensions ?? []),
+          ],
+          unwantedRecommendations:
+            options?.vscodeExtensions?.unwantedExtensions,
+        },
+      })
+    )
   }
 
   public getFiles = () => {

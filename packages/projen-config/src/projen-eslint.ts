@@ -71,14 +71,16 @@ export class EslintConfig {
       additionalIgnorePaths.push('!.projenrc.ts')
     }
 
-    new JsonFile(this.project, configFilePath, {
-      marker: false,
-      obj: {
-        extends: ['@atws/eslint-config'],
-        overrides,
-        root: true,
-      },
-    })
+    this.project.files.push(
+      new JsonFile(this.project, configFilePath, {
+        marker: false,
+        obj: {
+          extends: ['@atws/eslint-config'],
+          overrides,
+          root: true,
+        },
+      })
+    )
 
     this.project.deps.addDependency(
       '@atws/eslint-config',
@@ -86,19 +88,21 @@ export class EslintConfig {
     )
     this.project.deps.addDependency('eslint', DependencyType.DEVENV)
 
-    new TextFile(this.project, ignoreFilePath, {
-      lines: [
-        '.*/*',
-        'generated',
-        'coverage',
-        '.eslintrc.js',
-        '*.png',
-        'tsconfig.json',
-        ...additionalIgnorePaths,
-        ...(options?.ignorePaths ?? []),
-      ],
-      marker: false,
-    })
+    this.project.files.push(
+      new TextFile(this.project, ignoreFilePath, {
+        lines: [
+          '.*/*',
+          'generated',
+          'coverage',
+          '.eslintrc.js',
+          '*.png',
+          'tsconfig.json',
+          ...additionalIgnorePaths,
+          ...(options?.ignorePaths ?? []),
+        ],
+        marker: false,
+      })
+    )
   }
 
   public getFiles = () => {

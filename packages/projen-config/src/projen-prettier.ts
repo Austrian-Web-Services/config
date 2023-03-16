@@ -13,13 +13,15 @@ export class PrettierConfig {
     this.project.tryRemoveFile('.prettierrc')
     this.project.tryRemoveFile('.prettierrc.json')
 
-    new TextFile(this.project, filePath, {
-      lines: [
-        'module.exports = {',
-        `  ...require('@atws/prettier-config')`,
-        '}',
-      ],
-    })
+    this.project.files.push(
+      new TextFile(this.project, filePath, {
+        lines: [
+          'module.exports = {',
+          `  ...require('@atws/prettier-config')`,
+          '}',
+        ],
+      })
+    )
 
     this.project.deps.addDependency(
       '@atws/prettier-config',
