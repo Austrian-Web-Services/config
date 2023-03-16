@@ -43,6 +43,7 @@ export class EslintConfig {
     this.project.tryRemoveFile(ignoreFilePath)
 
     const overrides = []
+    const additionalIgnorePaths: string[] = []
 
     if (options?.cdkFileRegex !== undefined) {
       overrides.push({
@@ -66,6 +67,8 @@ export class EslintConfig {
           project: './tsconfig.dev.json',
         },
       })
+      additionalIgnorePaths.push('!.projenrc.js')
+      additionalIgnorePaths.push('!.projenrc.ts')
     }
 
     new JsonFile(this.project, configFilePath, {
@@ -91,6 +94,7 @@ export class EslintConfig {
         '.eslintrc.js',
         '*.png',
         'tsconfig.json',
+        ...additionalIgnorePaths,
         ...(options?.ignorePaths ?? []),
       ],
       marker: false,
