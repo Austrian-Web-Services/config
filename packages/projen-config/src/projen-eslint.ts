@@ -61,7 +61,7 @@ export class EslintConfig {
     if (options?.projenFileRegex !== undefined) {
       overrides.push({
         extends: ['@atws/eslint-config/projen'],
-        files: options.projenFileRegex,
+        files: [options.projenFileRegex, '.projenrc.{js,ts}'],
         parserOptions: {
           project: './tsconfig.dev.json',
         },

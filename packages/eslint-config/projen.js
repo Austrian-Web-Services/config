@@ -3,7 +3,7 @@
 module.exports = {
   extends: ['@atws/eslint-config/cdk'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.dev.json',
   },
   rules: {
     /**
