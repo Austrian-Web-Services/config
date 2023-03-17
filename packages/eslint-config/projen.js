@@ -11,7 +11,7 @@ module.exports = {
      */
     '@typescript-eslint/consistent-type-definitions': 'off',
     /**
-     * Type imports cause issues with the JSII compiler.
+     * Inline type imports cause issues with the JSII compiler.
      */
     '@typescript-eslint/consistent-type-imports': [
       'error',
@@ -21,6 +21,10 @@ module.exports = {
         prefer: 'type-imports',
       },
     ],
+    /**
+     * Disable autofix that uses unsupported inline type imports.
+     */
+    'canonical/prefer-inline-type-import': 'off',
     /**
      * Dependencies like `aws-sdk` are available in the Lambda runtime.
      * In projen projects, we use `devDependencies` to indicate that a
