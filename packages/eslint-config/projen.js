@@ -13,7 +13,14 @@ module.exports = {
     /**
      * Type imports cause issues with the JSII compiler.
      */
-    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        disallowTypeAnnotations: true,
+        fixStyle: 'separate-type-imports',
+        prefer: 'type-imports',
+      },
+    ],
     /**
      * Dependencies like `aws-sdk` are available in the Lambda runtime.
      * In projen projects, we use `devDependencies` to indicate that a
