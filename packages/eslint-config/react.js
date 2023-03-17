@@ -20,6 +20,9 @@ module.exports = {
     // conflict with prettier
     'react/jsx-curly-newline': 'off',
 
+    // conflict with prettier
+    'react/jsx-indent': 'off',
+
     // missing deps in hooks will display a warning instead of an error
     'react-hooks/exhaustive-deps': 'warn',
   },
