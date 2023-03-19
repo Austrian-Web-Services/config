@@ -15,6 +15,10 @@
   "javascript.format.enable": false,
   "typescript.format.enable": false,
   "git.autofetch": true,
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "search.exclude": {
     "**/node_modules": true,
     "**/*.lock": true,
