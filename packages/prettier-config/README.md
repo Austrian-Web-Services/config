@@ -16,6 +16,6 @@ Create a `.prettierrc.js` file in the root of your project and extend the base c
 
 ```js
 module.exports = {
-  ...require("@atws/prettier-config")
+  ...require('@atws/prettier-config'),
 }
 ```

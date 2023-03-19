@@ -21,17 +21,17 @@ import {
   EslintConfig,
   VscodeConfig,
   GitConfig,
-} from "@atws/projen-config"
+} from '@atws/projen-config'
 
-const project = new awscdk.AwsCdkConstructLibrary({ 
-  devDeps: ["@atws/projen-config"],
+const project = new awscdk.AwsCdkConstructLibrary({
+  devDeps: ['@atws/projen-config'],
 })
 
 new PrettierConfig(project)
 
 new EslintConfig(project, {
-  cdkFileRegex: "**/src/**/*.ts",
-  reactFileRegex: "**/webapp/**/*.{ts,tsx}",
+  cdkFileRegex: '**/src/**/*.ts',
+  reactFileRegex: '**/webapp/**/*.{ts,tsx}',
 })
 
 new VscodeConfig(project, {
@@ -59,8 +59,8 @@ Add an opinionated base config for eslint. It allows to specify the file regex f
 
 ```ts
 new EslintConfig(project, {
-  cdkFileRegex: "**/src/**/*.ts",
-  reactFileRegex: "**/webapp/**/*.{ts,tsx}",
+  cdkFileRegex: '**/src/**/*.ts',
+  reactFileRegex: '**/webapp/**/*.{ts,tsx}',
 })
 ```
 

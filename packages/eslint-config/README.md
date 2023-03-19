@@ -13,7 +13,7 @@ Install `eslint` and the package:
 yarn add -D eslint @atws/eslint-config prettier
 ```
 
-In the root of your project, create a `.eslintrc.js` file and extend the base configuration. The eslint config relies on  [prettier](https://prettier.io) for formatting, so make sure to install and configure it as well.
+In the root of your project, create a `.eslintrc.js` file and extend the base configuration. The eslint config relies on [prettier](https://prettier.io) for formatting, so make sure to install and configure it as well.
 
 To extend the base configuration for specific files, use the `overrides` property. You can also create a separate `.eslintrc.js` file in the directory where you want to extend the configuration.
 
@@ -23,7 +23,7 @@ Create a `.eslintrc.js` in your project root
 /* global module */
 
 module.exports = {
-  extends: ['@atws/eslint-config',],
+  extends: ['@atws/eslint-config'],
   overrides: [
     {
       extends: ['@atws/eslint-config/cdk'],
@@ -42,7 +42,7 @@ Create a `.prettierrc.js` in your project root. You can use [@atws/prettier-conf
 
 ```js
 module.exports = {
-  ...require("@atws/prettier-config")
+  ...require('@atws/prettier-config'),
 }
 ```
 
