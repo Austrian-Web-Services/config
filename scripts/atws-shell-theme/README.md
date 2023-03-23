@@ -4,6 +4,20 @@ A custom theme for [oh-my-posh](https://ohmyposh.dev) that uses the [Hack](https
 
 ![atws](atws.png)
 
+### Quick Install for Bash
+
+```bash
+wget https://raw.githubusercontent.com/Austrian-Web-Services/config/main/scripts/atws-shell-theme/install.sh && sudo bash install.sh && rm install.sh
+```
+
+add to your `settings.json`:
+
+```json
+{
+  "terminal.integrated.fontFamily": "Hack NF"
+}
+```
+
 ### Usage
 
 1. Install [oh-my-posh](https://ohmyposh.dev/docs/installation)
