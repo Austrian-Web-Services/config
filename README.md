@@ -17,3 +17,9 @@ This repository, organized as a yarn monorepo, includes an assortment of configu
 | [@atws/eslint-config](/packages/eslint-config)     | Extensive eslint ruleset with optimized variants for AWS CDK and React.js             | [![npm](https://img.shields.io/npm/v/@atws/eslint-config?style=flat-square)](https://www.npmjs.com/package/@atws/eslint-config) [![npm](https://img.shields.io/npm/dm/@atws/eslint-config?color=%23175ed1&style=flat-square)](https://www.npmjs.com/package/@atws/eslint-config)         |
 | [@atws/prettier-config](/packages/prettier-config) | Simple prettier base configuration                                                    | [![npm](https://img.shields.io/npm/v/@atws/prettier-config?style=flat-square)](https://www.npmjs.com/package/@atws/prettier-config) [![npm](https://img.shields.io/npm/dm/@atws/prettier-config?color=%23175ed1&style=flat-square)](https://www.npmjs.com/package/@atws/prettier-config) |
 | [@atws/projen-config](/packages/projen-config)     | Extensions for [projen](https://projen.io) to use custom `@atws` packages and configs | [![npm](https://img.shields.io/npm/v/@atws/projen-config?style=flat-square)](https://www.npmjs.com/package/@atws/projen-config) [![npm](https://img.shields.io/npm/dm/@atws/projen-config?color=%23175ed1&style=flat-square)](https://www.npmjs.com/package/@atws/projen-config)         |
+
+## Scripts
+
+| Script                                        | Description                                                               |
+| --------------------------------------------- | ------------------------------------------------------------------------- |
+| [atws-shell-theme](/scripts/atws-shell-theme) | Make your shell look nice, a theme for [oh-my-posh](https://ohmyposh.dev) |
