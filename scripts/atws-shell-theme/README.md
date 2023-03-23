@@ -58,7 +58,7 @@ For VSCode, add the following to your `settings.json`:
 Powershell, use the theme at startup using `$PROFILE`
 
 ```powershell
-New-Item -Path $PROFILE -Type File -Force -Value "oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Austrian-Web-Services/config/main/scripts/atws-shell-theme/atws.omp.json'"
+New-Item -Path $PROFILE -Type File -Force -Value "oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Austrian-Web-Services/config/main/scripts/atws-shell-theme/atws.omp.json' | Invoke-Expression"
 
 # reload your profile
 . $PROFILE
