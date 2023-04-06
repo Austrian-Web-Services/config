@@ -1,0 +1,68 @@
+{
+  "name": "atws-core-extensions",
+  "displayName": "ATWS Core Extension Pack",
+  "version": "1.0.0",
+  "description": "A collection of extensions for the atws development environment",
+  "categories": [
+    "Extension Packs"
+  ],
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Austrian-Web-Services/config.git"
+  },
+  "publisher": "atws",
+  "scripts": {
+    "build": "exit 0",
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "extends": "semantic-release-monorepo",
+    "plugins": [
+      [
+        "semantic-release-vsce",
+        {
+          "packageVsix": true
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "*.vsix"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "semantic-release-vsce": "^5.5.6"
+  },
+  "extensionPack": [
+    "EditorConfig.EditorConfig",
+    "Orta.vscode-jest",
+    "PKief.material-icon-theme",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "albert.TabOut",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.typescript-notebook",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "leizongmin.node-module-intellisense",
+    "luisfontes19.vscode-swissknife",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "ms-vsliveshare.vsliveshare",
+    "naumovs.color-highlight"
+  ],
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "icon": "images/icon-core.png"
+}
