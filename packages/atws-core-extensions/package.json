@@ -64,5 +64,5 @@
   "engines": {
     "vscode": "^1.77.0"
   },
-  "icon": "images/icon-core.png"
+  "icon": "images/icon.png"
 }
