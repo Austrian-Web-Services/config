@@ -23,3 +23,10 @@ This repository, organized as a yarn monorepo, includes an assortment of configu
 | Script                                        | Description                                                               |
 | --------------------------------------------- | ------------------------------------------------------------------------- |
 | [atws-shell-theme](/scripts/atws-shell-theme) | Make your shell look nice, a theme for [oh-my-posh](https://ohmyposh.dev) |
+
+## VSCode Extension Packs
+
+| Extension Pack                                                                                        | Description                                                  |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [atws-core-extensions](https://marketplace.visualstudio.com/items?itemName=atws.atws-core-extensions) | A collection of essential extensions                         |
+| [atws-full-extensions](https://marketplace.visualstudio.com/items?itemName=atws.atws-full-extensions) | A collection of extensions that are useful for most projects |
