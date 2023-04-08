@@ -1,5 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./packages/tsconfig/base",
+  "extends": "./packages/tsconfig/node18/base",
   "include": ["packages/**/*"]
 }
