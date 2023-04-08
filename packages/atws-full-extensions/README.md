@@ -19,3 +19,27 @@ Includes the [ATWS Core Extensions](https://marketplace.visualstudio.com/items?i
 - [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Develop inside a containerized environment.
 - [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Open a Folder in WSL.
 - [CSS Peek](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek) - Peek into CSS classes and IDs in your HTML files.
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Show errors and warnings inline in your code.
+
+## Recommended VSCode Settings
+
+Add the following settings to your VSCode settings.json file to get the most out of this pack. You can access your settings.json file by pressing `Ctrl + ,` or `Cmd + ,` on your keyboard.
+
+This changes the style of the [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) errors/warnings to be more subtle.
+
+```json
+"errorLens.delay": 1500,
+"errorLens.enabledInMergeConflict": false,
+"errorLens.fontSize": "0.85em",
+"errorLens.fontStyleItalic": true,
+"errorLens.messageBackgroundMode": "message",
+"errorLens.messageTemplate": "$source: $message",
+"errorLens.padding": "0.15rem",
+```
+
+<details>
+  <summary>Preview</summary>
+
+![Error Lens](https://raw.githubusercontent.com/Austrian-Web-Services/config/main/packages/atws-full-extensions/error_lense_settings.jpg)
+
+</details>
