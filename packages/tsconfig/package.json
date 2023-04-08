@@ -1,6 +1,6 @@
 {
   "name": "@atws/tsconfig",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "An opinionated base setup of tsconfig.json",
   "keywords": [
     "tsconfig",
@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "files": [
-    "base.json",
-    "react.json"
-  ],
+  "directories": {
+    "node16": "node16",
+    "node18": "node18"
+  },
   "scripts": {
     "build": "exit 0",
     "semantic-release": "semantic-release"
