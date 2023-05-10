@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "workspaces": [
     "packages/*"
