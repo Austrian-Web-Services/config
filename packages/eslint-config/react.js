@@ -25,6 +25,17 @@ module.exports = {
 
     // missing deps in hooks will display a warning instead of an error
     'react-hooks/exhaustive-deps': 'warn',
+
+    // allow import of css files and locales
+    'import/no-unassigned-import': [
+      'error',
+      {
+        allow: ['**/*.css', '**/*.scss', '**/*.sass', '**/*.less', '*locale*'],
+      },
+    ],
+
+    // Disabled due to bug caused when using a type for the function handler
+    'react/prop-types': 'off',
   },
   settings: {
     react: {
