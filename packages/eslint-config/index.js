@@ -56,7 +56,7 @@ const typescriptRules = {
 }
 
 module.exports = {
-  extends: ['canonical', 'prettier'],
+  extends: ['canonical', 'prettier', 'canonical/jsdoc', 'canonical/regexp', ],
   ignorePatterns: [
     '**/node_modules/**',
     '**/dist/**',
