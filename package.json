@@ -15,10 +15,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces run build",
+    "build": "yarn workspaces foreach run build",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
-    "release": "yarn workspaces run semantic-release"
+    "release": "yarn workspaces foreach run semantic-release"
   },
   "release": {
     "branches": [
