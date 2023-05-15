@@ -42,6 +42,7 @@ const typescriptRules = {
     {
       allowNullableBoolean: true,
       allowNullableObject: true,
+      allowNullableString: true,
       allowString: true,
     },
   ],
