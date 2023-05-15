@@ -40,8 +40,9 @@ const typescriptRules = {
   '@typescript-eslint/strict-boolean-expressions': [
     'warn',
     {
-      allowNumber: false,
-      allowString: false,
+      allowNullableBoolean: true,
+      allowNullableObject: true,
+      allowString: true,
     },
   ],
 
@@ -56,7 +57,7 @@ const typescriptRules = {
 }
 
 module.exports = {
-  extends: ['canonical', 'prettier', 'canonical/jsdoc', 'canonical/regexp', ],
+  extends: ['canonical', 'prettier', 'canonical/jsdoc', 'canonical/regexp'],
   ignorePatterns: [
     '**/node_modules/**',
     '**/dist/**',
