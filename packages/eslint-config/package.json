@@ -19,7 +19,8 @@
     "index.js",
     "cdk.js",
     "react.js",
-    "projen.js"
+    "projen.js",
+    "node.js"
   ],
   "scripts": {
     "build": "exit 0",
