@@ -92,6 +92,9 @@ module.exports = {
     // conflict with prettier
     'canonical/export-specifier-newline': 'off',
 
+    // not necessary, @typescript-eslint/naming-convention is used instead
+    'canonical/id-match': 'off',
+
     // conflict with prettier
     'canonical/import-specifier-newline': 'off',
 
