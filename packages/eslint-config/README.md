@@ -50,6 +50,16 @@ module.exports = {
 
 There are a few variants of the base config that can be used to extend the base config.
 
+### Node
+
+Add rules for Node.js projects.
+
+```js
+{
+  extends: ['@atws/eslint-config/node']
+}
+```
+
 ### CDK
 
 Disable rules that conflict with common CDK patterns.

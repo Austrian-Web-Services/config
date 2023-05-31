@@ -1,7 +1,5 @@
-/* global module */
-
 module.exports = {
-  extends: ['./packages/eslint-config/index.js'],
+  extends: ['./packages/eslint-config/node.js'],
   overrides: [
     {
       extends: ['@atws/eslint-config/cdk'],

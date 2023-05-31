@@ -1,5 +1,3 @@
-/* global module */
-
 const typescriptRules = {
   // conflict with prettier
   '@typescript-eslint/comma-dangle': 'off',
@@ -23,6 +21,9 @@ const typescriptRules = {
   '@typescript-eslint/quotes': 'off',
 
   // conflict with prettier
+  '@typescript-eslint/semi': ['error', 'never'],
+
+  // conflict with prettier
   '@typescript-eslint/space-before-function-paren': 'off',
 
   // false positives for `libphonenumber-js`
@@ -40,7 +41,6 @@ module.exports = {
     'canonical',
     'canonical/jsdoc',
     'canonical/regexp',
-    'canonical/typescript',
     'canonical/jest',
     'prettier',
     'plugin:security/recommended',
@@ -55,6 +55,13 @@ module.exports = {
     'coverage',
   ],
   overrides: [
+    {
+      extends: ['canonical/typescript'],
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        ...typescriptRules,
+      },
+    },
     {
       files: '*.test.{ts,tsx}',
       rules: {
@@ -76,7 +83,6 @@ module.exports = {
   ],
   plugins: ['security', 'prettier'],
   rules: {
-    ...typescriptRules,
     // conflict with prettier
     'arrow-body-style': 'off',
 
