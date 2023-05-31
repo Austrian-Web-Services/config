@@ -34,9 +34,6 @@ module.exports = {
 
     // missing deps in hooks will display a warning instead of an error
     'react-hooks/exhaustive-deps': 'warn',
-
-    // unnecessary in react
-    'security/detect-object-injection': 'off',
   },
   settings: {
     react: {

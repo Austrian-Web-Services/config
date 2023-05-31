@@ -43,7 +43,6 @@ module.exports = {
     'canonical/regexp',
     'canonical/jest',
     'prettier',
-    'plugin:security/recommended',
   ],
   ignorePatterns: [
     'package.json',
@@ -81,7 +80,7 @@ module.exports = {
       files: '*.graphql',
     },
   ],
-  plugins: ['security', 'prettier'],
+  plugins: ['prettier'],
   rules: {
     // conflict with prettier
     'arrow-body-style': 'off',
