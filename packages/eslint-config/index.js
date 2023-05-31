@@ -22,9 +22,6 @@ const typescriptRules = {
   // conflict with prettier
   '@typescript-eslint/quotes': 'off',
 
-  // disable semicolons
-  '@typescript-eslint/semi': ['error', 'never'],
-
   // conflict with prettier
   '@typescript-eslint/space-before-function-paren': 'off',
 
