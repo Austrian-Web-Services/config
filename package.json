@@ -27,7 +27,7 @@
     "extends": "semantic-release-monorepo"
   },
   "devDependencies": {
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "projen": "^0.68.5",
     "semantic-release": "19.0.5",
     "semantic-release-monorepo": "^7.0.5",
