@@ -8,15 +8,7 @@ const typescriptRules = {
   '@typescript-eslint/indent': 'off',
 
   // improve readability
-  '@typescript-eslint/member-delimiter-style': [
-    'error',
-    {
-      multiline: {
-        delimiter: 'none',
-        requireLast: false,
-      },
-    },
-  ],
+  '@typescript-eslint/member-delimiter-style': 'off',
 
   // conflict with prettier
   '@typescript-eslint/no-extra-parens': 'off',
@@ -36,17 +28,6 @@ const typescriptRules = {
   // conflict with prettier
   '@typescript-eslint/space-before-function-paren': 'off',
 
-  // set to warn only
-  '@typescript-eslint/strict-boolean-expressions': [
-    'warn',
-    {
-      allowNullableBoolean: true,
-      allowNullableObject: true,
-      allowNullableString: true,
-      allowString: true,
-    },
-  ],
-
   // false positives for `libphonenumber-js`
   'import/no-named-as-default': 'off',
 
@@ -58,36 +39,20 @@ const typescriptRules = {
 }
 
 module.exports = {
-  extends: ['canonical', 'prettier', 'canonical/jsdoc', 'canonical/regexp'],
+  extends: ['canonical', 'prettier', 'plugin:security/recommended'],
   ignorePatterns: [
-    '**/node_modules/**',
-    '**/dist/**',
-    '**/build/**',
-    'package-lock.json',
-    '*.lock',
     'package.json',
+    'dist',
+    'node_modules',
+    'cdk.out',
+    'package-lock.json',
+    'yarn.lock',
+    'coverage',
   ],
   overrides: [
     {
-      extends: ['canonical/typescript', 'canonical/typescript-type-checking'],
-      files: '*.{ts,tsx}',
-      parserOptions: {
-        project: './tsconfig.json',
-      },
-      rules: typescriptRules,
-    },
-    {
-      extends: [
-        'canonical/jest',
-        'canonical/typescript',
-        'canonical/typescript-type-checking',
-      ],
       files: '*.test.{ts,tsx}',
-      parserOptions: {
-        project: './tsconfig.json',
-      },
       rules: {
-        ...typescriptRules,
         '@typescript-eslint/no-floating-promises': 'off',
       },
     },
@@ -106,6 +71,7 @@ module.exports = {
   ],
   plugins: ['security', 'prettier'],
   rules: {
+    ...typescriptRules,
     // conflict with prettier
     'arrow-body-style': 'off',
 
@@ -135,5 +101,10 @@ module.exports = {
 
     // allow `Promise.then`
     'promise/prefer-await-to-then': 'off',
+  },
+  settings: {
+    jest: {
+      version: 29,
+    },
   },
 }

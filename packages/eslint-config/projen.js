@@ -2,9 +2,6 @@
 
 module.exports = {
   extends: ['@atws/eslint-config/cdk'],
-  parserOptions: {
-    project: './tsconfig.dev.json',
-  },
   rules: {
     /**
      * JSII only supports types via the `interface` keyword.
