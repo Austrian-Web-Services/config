@@ -79,6 +79,12 @@ module.exports = {
       },
     },
     {
+      files: 'tsconfig*.json',
+      rules: {
+        'jsonc/no-comments': 'off',
+      },
+    },
+    {
       extends: ['canonical/yaml', 'prettier'],
       files: '*.yaml',
     },
