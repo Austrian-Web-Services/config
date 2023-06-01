@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['@atws/eslint-config', 'canonical/react', 'canonical/jsx-a11y'],
+  extends: [
+    '@atws/eslint-config',
+    'canonical/react',
+    'canonical/typescript',
+    'canonical/jsx-a11y',
+  ],
   rules: {
     // allows useEffect to be at the top
     '@typescript-eslint/no-use-before-define': 'off',
