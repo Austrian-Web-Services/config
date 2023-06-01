@@ -45,7 +45,6 @@ module.exports = {
     'prettier',
   ],
   ignorePatterns: [
-    'package.json',
     'dist',
     'node_modules',
     'cdk.out',
@@ -71,6 +70,13 @@ module.exports = {
     {
       extends: ['canonical/json', 'prettier', 'plugin:jsonc/prettier'],
       files: '*.{json,jsonc,json5}',
+    },
+    {
+      extends: ['prettier'],
+      files: 'package.json',
+      rules: {
+        'jsonc/sort-keys': 'off',
+      },
     },
     {
       extends: ['canonical/yaml', 'prettier'],
