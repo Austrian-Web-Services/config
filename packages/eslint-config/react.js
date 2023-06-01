@@ -1,3 +1,5 @@
+const typescriptRules = require('./lib/typescriptRules').typescriptRules
+
 module.exports = {
   extends: [
     '@atws/eslint-config',
@@ -6,6 +8,8 @@ module.exports = {
     'canonical/jsx-a11y',
   ],
   rules: {
+    ...typescriptRules,
+
     // allows useEffect to be at the top
     '@typescript-eslint/no-use-before-define': 'off',
 

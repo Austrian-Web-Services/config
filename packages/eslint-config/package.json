@@ -20,7 +20,8 @@
     "cdk.js",
     "react.js",
     "projen.js",
-    "node.js"
+    "node.js",
+    "lib/typescriptRules.js"
   ],
   "scripts": {
     "build": "exit 0",

@@ -4,6 +4,6 @@ module.exports = {
     'canonical/node',
     'plugin:security/recommended',
   ],
-  rules: {},
   plugins: ['security'],
+  rules: {},
 }
