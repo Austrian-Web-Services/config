@@ -55,7 +55,7 @@ module.exports = {
   ],
   overrides: [
     {
-      extends: ['canonical/typescript'],
+      extends: ['canonical/typescript', 'prettier'],
       files: ['*.ts', '*.tsx'],
       rules: {
         ...typescriptRules,
@@ -69,15 +69,15 @@ module.exports = {
       },
     },
     {
-      extends: ['canonical/json', 'plugin:jsonc/prettier'],
+      extends: ['canonical/json', 'prettier', 'plugin:jsonc/prettier'],
       files: '*.{json,jsonc,json5}',
     },
     {
-      extends: ['canonical/yaml'],
+      extends: ['canonical/yaml', 'prettier'],
       files: '*.yaml',
     },
     {
-      extends: ['canonical/graphql'],
+      extends: ['canonical/graphql', 'prettier'],
       files: '*.graphql',
     },
   ],
