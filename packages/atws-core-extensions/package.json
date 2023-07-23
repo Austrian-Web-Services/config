@@ -1,7 +1,7 @@
 {
   "name": "atws-core-extensions",
   "displayName": "ATWS Core Extension Pack",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A collection of extensions for the atws development environment",
   "categories": [
     "Extension Packs"
@@ -18,22 +18,19 @@
   },
   "extensionPack": [
     "EditorConfig.EditorConfig",
-    "Orta.vscode-jest",
+    "Orta.vscode-twoslash-queries",
     "PKief.material-icon-theme",
     "VisualStudioExptTeam.vscodeintellicode",
     "albert.TabOut",
-    "christian-kohler.npm-intellisense",
+    "bierner.markdown-preview-github-styles",
     "christian-kohler.path-intellisense",
     "dbaeumer.vscode-eslint",
     "donjayamanne.typescript-notebook",
-    "ecmel.vscode-html-css",
     "esbenp.prettier-vscode",
-    "leizongmin.node-module-intellisense",
     "luisfontes19.vscode-swissknife",
     "mikestead.dotenv",
-    "ms-azuretools.vscode-docker",
-    "ms-vsliveshare.vsliveshare",
-    "naumovs.color-highlight"
+    "naumovs.color-highlight",
+    "yoavbls.pretty-ts-errors"
   ],
   "engines": {
     "vscode": "^1.77.0"
