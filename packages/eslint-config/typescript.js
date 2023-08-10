@@ -23,14 +23,5 @@ module.exports = {
     ...prettierConflictRules,
     ...generalDisabledRules,
     ...typescriptRules,
-
-    // prevents unexpected behaivour changes
-    '@typescript-eslint/no-confusing-void-expression': 0,
-
-    // allow kebap case
-    'canonical/filename-match-regex': 0,
-
-    // allows constructing without assignment
-    'no-new': 0,
   },
 }

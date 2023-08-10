@@ -10,10 +10,10 @@ This package contains extensive eslint rulesets; it is based on [gajus/eslint-co
 Install `eslint` and the package:
 
 ```bash
-yarn add -D eslint @atws/eslint-config prettier
+yarn add -D eslint @atws/eslint-config @typescript-eslint/parser@^5.62.0
 ```
 
-In the root of your project, create a `.eslintrc.js` file and extend the base configuration. The eslint config relies on [prettier](https://prettier.io) for formatting, so make sure to install and configure it as well.
+In the root of your project, create a `.eslintrc.js` file and extend the base configuration.
 
 To extend the base configuration for specific files, use the `overrides` property. You can also create a separate `.eslintrc.js` file in the directory where you want to extend the configuration.
 
@@ -33,12 +33,24 @@ module.exports = {
       extends: ['@atws/eslint-config/react'],
       files: '*.tsx',
     },
+    {
+      extends: ['@atws/eslint-config/typescript'],
+      files: 'backend/**/*.ts',
+    },
   ],
   root: true,
 }
 ```
 
+## Integration with prettier-eslint
+
 Create a `.prettierrc.js` in your project root. You can use [@atws/prettier-config](https://www.npmjs.com/package/@atws/prettier-config) to get started with prettier.
+
+Don't forget to install the [Prettier ESLint VSCode extension](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint).
+
+```bash
+yarn add -D prettier-eslint prettier@^2.8.8 @atws/prettier-config
+```
 
 ```js
 module.exports = {
@@ -50,13 +62,13 @@ module.exports = {
 
 There are a few variants of the base config that can be used to extend the base config.
 
-### Node
+### Typescript
 
-Add rules for Node.js projects.
+Add rules for typescript projects.
 
 ```js
 {
-  extends: ['@atws/eslint-config/node']
+  extends: ['@atws/eslint-config/typescript']
 }
 ```
 

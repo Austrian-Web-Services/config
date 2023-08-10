@@ -1,13 +1,10 @@
-const typescriptRules = require('./lib/typescriptRules').typescriptRules
+const {
+  generalDisabledRules,
+  prettierConflictRules,
+} = require('./lib/overrides')
 
 module.exports = {
-  extends: [
-    'canonical',
-    'canonical/jsdoc',
-    'canonical/regexp',
-    'canonical/jest',
-    'prettier',
-  ],
+  extends: ['prettier'],
   ignorePatterns: [
     'dist',
     'node_modules',
@@ -15,42 +12,22 @@ module.exports = {
     'package-lock.json',
     'yarn.lock',
     'coverage',
+    'package.json',
   ],
   overrides: [
-    {
-      extends: ['canonical/typescript', 'prettier'],
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        ...typescriptRules,
-      },
-    },
-    {
-      files: '*.test.{ts,tsx}',
-      rules: {
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-non-null-assertion': 'off',
-      },
-    },
     {
       extends: ['canonical/json', 'prettier', 'plugin:jsonc/prettier'],
       files: '*.{json,jsonc,json5}',
     },
     {
-      extends: ['prettier'],
-      files: 'package.json',
-      rules: {
-        'jsonc/sort-keys': 'off',
-      },
-    },
-    {
       files: 'tsconfig*.json',
       rules: {
-        'jsonc/no-comments': 'off',
+        'jsonc/no-comments': 0,
       },
     },
     {
       extends: ['canonical/yaml', 'prettier'],
-      files: '*.yaml',
+      files: '*.{yml,yaml}',
     },
     {
       extends: ['canonical/graphql', 'prettier'],
@@ -59,42 +36,10 @@ module.exports = {
   ],
   plugins: ['prettier'],
   rules: {
-    // conflict with prettier
-    'arrow-body-style': 'off',
-
-    // conflict with prettier
-    'canonical/destructuring-property-newline': 'off',
-
-    // conflict with prettier
-    'canonical/export-specifier-newline': 'off',
-
-    // not necessary, @typescript-eslint/naming-convention is used instead
-    'canonical/id-match': 'off',
-
-    // conflict with prettier
-    'canonical/import-specifier-newline': 'off',
-
-    // reducing eslint runtime
-    'import/no-deprecated': 'off',
-
-    // allows todo and fixme comments
-    'no-warning-comments': 'off',
-
-    // conflict with prettier
-    'prefer-arrow-callback': 'off',
-
-    // automatically creates template string literals
-    'prefer-template': 'warn',
-
-    // configure prettier
-    'prettier/prettier': ['error'],
-
-    // allow `Promise.then`
-    'promise/prefer-await-to-then': 'off',
+    ...generalDisabledRules,
+    ...prettierConflictRules,
   },
-  settings: {
-    jest: {
-      version: 29,
-    },
+  parserOptions: {
+    ecmaVersion: 2_022,
   },
 }

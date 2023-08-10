@@ -1,17 +1,27 @@
-const typescriptRules = require('./lib/typescriptRules').typescriptRules
+const {
+  generalDisabledRules,
+  prettierConflictRules,
+  typescriptRules,
+} = require('./lib/overrides')
 
 module.exports = {
   extends: [
-    '@atws/eslint-config',
+    'canonical',
     'canonical/react',
     'canonical/typescript',
     'canonical/jsx-a11y',
+    'canonical/typescript-type-checking',
+    'prettier',
   ],
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ['@typescript-eslint', 'react-refresh'],
   rules: {
     ...typescriptRules,
-
-    // allows useEffect to be at the top
-    '@typescript-eslint/no-use-before-define': 'off',
+    ...generalDisabledRules,
+    ...prettierConflictRules,
 
     // allow import of css files and locales
     'import/no-unassigned-import': [
@@ -25,28 +35,32 @@ module.exports = {
           'dayjs/locale/*',
           'expo-router/entry',
           'babel-register',
+          '@total-typescript/ts-reset',
+          '@testing-library/jest-dom',
         ],
       },
     ],
 
     // allows className and style as component props
-    'react/forbid-component-props': 'off',
-
-    // conflict with prettier
-    'react/jsx-curly-newline': 'off',
-
-    // conflict with prettier
-    'react/jsx-indent': 'off',
+    'react/forbid-component-props': 0,
 
     // Disabled due to bug caused when using a type for the function handler
-    'react/prop-types': 'off',
+    'react/prop-types': 0,
 
     // missing deps in hooks will display a warning instead of an error
     'react-hooks/exhaustive-deps': 'warn',
+
+    // guarantees that the component is exported correctly
+    'react-refresh/only-export-components': [
+      'warn',
+      {
+        allowConstantExport: true,
+      },
+    ],
   },
   settings: {
     react: {
-      version: '18.0.0',
+      version: 'detect',
     },
   },
 }
