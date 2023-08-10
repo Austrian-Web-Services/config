@@ -34,7 +34,6 @@ module.exports = {
       files: '*.graphql',
     },
   ],
-  plugins: ['prettier'],
   rules: {
     ...generalDisabledRules,
     ...prettierConflictRules,
