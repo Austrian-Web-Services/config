@@ -8,6 +8,8 @@ module.exports = {
   extends: [
     'canonical',
     'canonical/node',
+    'canonical/jsdoc',
+    'canonical/regexp',
     'canonical/typescript',
     'canonical/typescript-type-checking',
     'prettier',
