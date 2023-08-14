@@ -52,6 +52,14 @@ const typescriptRules = {
   // disable due to false positives
   '@typescript-eslint/no-unnecessary-condition': 0,
 
+  'id-length': [
+    'error',
+    {
+      // for tRPC and zod
+      exceptions: ['t', 'z', '_'],
+    },
+  ],
+
   // false positives for `libphonenumber-js`
   'import/no-named-as-default': 0,
 
@@ -63,7 +71,7 @@ const typescriptRules = {
 }
 
 module.exports = {
-  typescriptRules,
   generalDisabledRules,
   prettierConflictRules,
+  typescriptRules,
 }

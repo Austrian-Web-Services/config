@@ -5,6 +5,9 @@ const {
 } = require('./lib/overrides')
 
 module.exports = {
+  env: {
+    browser: true,
+  },
   extends: [
     'canonical',
     'canonical/react',

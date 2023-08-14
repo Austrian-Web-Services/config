@@ -4,7 +4,7 @@ const {
 } = require('./lib/overrides')
 
 module.exports = {
-  extends: ['prettier'],
+  extends: ['canonical', 'prettier'],
   ignorePatterns: [
     'dist',
     'node_modules',
@@ -33,12 +33,20 @@ module.exports = {
       extends: ['canonical/graphql', 'prettier'],
       files: '*.graphql',
     },
+    {
+      extends: ['canonical', 'prettier'],
+      files: '*.config.js',
+      rules: {
+        // allow @type
+        'jsdoc/valid-types': 0,
+      },
+    },
   ],
+  parserOptions: {
+    ecmaVersion: 2_022,
+  },
   rules: {
     ...generalDisabledRules,
     ...prettierConflictRules,
-  },
-  parserOptions: {
-    ecmaVersion: 2_022,
   },
 }

@@ -5,6 +5,9 @@ const {
 } = require('./lib/overrides')
 
 module.exports = {
+  env: {
+    node: true,
+  },
   extends: [
     'canonical',
     'canonical/node',
@@ -33,5 +36,8 @@ module.exports = {
 
     // allows constructing without assignment
     'no-new': 0,
+
+    // allows using process.env
+    'node/no-process-env': 0,
   },
 }

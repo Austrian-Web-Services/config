@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    node: true,
+  },
   extends: ['./packages/eslint-config/index.js'],
   overrides: [
     {
@@ -18,9 +21,9 @@ module.exports = {
       files: '*.tsx',
     },
   ],
-  root: true,
   parserOptions: {
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: __dirname,
   },
+  root: true,
 }

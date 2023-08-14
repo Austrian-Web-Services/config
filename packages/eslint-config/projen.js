@@ -5,6 +5,9 @@ const {
 } = require('./lib/overrides')
 
 module.exports = {
+  env: {
+    node: true,
+  },
   extends: [
     'canonical',
     'canonical/node',
@@ -25,19 +28,11 @@ module.exports = {
     ...generalDisabledRules,
     ...typescriptRules,
 
-    // prevents unexpected behaivour changes
-    '@typescript-eslint/no-confusing-void-expression': 0,
-
-    // allow kebap case
-    'canonical/filename-match-regex': 0,
-
-    // allows constructing without assignment
-    'no-new': 0,
-
     /**
      * JSII only supports types via the `interface` keyword.
      */
     '@typescript-eslint/consistent-type-definitions': 0,
+
     /**
      * Inline type imports cause issues with the JSII compiler.
      */
@@ -49,10 +44,18 @@ module.exports = {
         prefer: 'type-imports',
       },
     ],
+
+    // prevents unexpected behaivour changes
+    '@typescript-eslint/no-confusing-void-expression': 0,
+
+    // allow kebap case
+    'canonical/filename-match-regex': 0,
+
     /**
      * Disable autofix that uses unsupported inline type imports.
      */
     'canonical/prefer-inline-type-import': 0,
+
     /**
      * Dependencies like `aws-sdk` are available in the Lambda runtime.
      * In projen projects, we use `devDependencies` to indicate that a
@@ -62,5 +65,8 @@ module.exports = {
      * not declared correctly.
      */
     'import/no-extraneous-dependencies': 0,
+
+    // allows constructing without assignment
+    'no-new': 0,
   },
 }
