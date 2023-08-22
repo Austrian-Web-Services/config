@@ -1,0 +1,78 @@
+{
+  "name": "@atws/cli",
+  "version": "0.0.0",
+  "description": "Setup atws config files automatically",
+  "keywords": [
+    "atws-cli"
+  ],
+  "homepage": "https://github.com/Austrian-Web-Services/config/tree/main/packages/cli",
+  "bugs": "https://github.com/Austrian-Web-Services/config/issues",
+  "repository": "Austrian-Web-Services/config",
+  "license": "MIT",
+  "author": "Lorenz Nimmervoll <admin@nimmervoll.work>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "atws": "./bin/run"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "semantic-release": "semantic-release",
+    "version": "oclif readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/core": "^2",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-warn-if-update-available": "^2.0.48",
+    "detect-package-manager": "^2.0.1",
+    "execa": "^8.0.1",
+    "inquirer": "^8.2.5",
+    "listr": "^0.14.3",
+    "nypm": "^0.3.0"
+  },
+  "devDependencies": {
+    "@oclif/plugin-not-found": "^2.3.37",
+    "@oclif/test": "^2.4.5",
+    "@types/inquirer": "^8.2.5",
+    "@types/listr": "^0.14.4",
+    "@types/node": "^16.18.41",
+    "oclif": "^3.11.3",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "main"
+    ]
+  },
+  "oclif": {
+    "bin": "atws",
+    "dirname": "atws",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-warn-if-update-available"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "init": {
+        "description": "Initialize atws config files"
+      }
+    }
+  }
+}

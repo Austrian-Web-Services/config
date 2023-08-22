@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "target": "es2019",
+    "composite": true,
+    "noEmit": false
+  },
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"]
+}
