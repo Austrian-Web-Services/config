@@ -204,3 +204,4 @@ $RECYCLE.BIN/
 
 # Local History for Visual Studio Code
 .history/
+oclif.manifest.json
