@@ -6,7 +6,11 @@ module.exports = {
   overrides: [
     {
       extends: ['./packages/eslint-config/typescript.js'],
-      files: '*.ts',
+      files: 'packages/**/*.ts',
+      parserOptions: {
+        project: ['./tsconfig.json', './packages/*/tsconfig.json'],
+        tsconfigRootDir: __dirname,
+      },
     },
     {
       extends: ['@atws/eslint-config/projen'],
