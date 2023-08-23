@@ -9,6 +9,14 @@
 
 This repository, organized as a yarn monorepo, includes an assortment of configuration files that can be used in other projects.
 
+## Quickstart
+
+Install prettier, eslint and VSCode settings using the cli:
+
+```properties
+npx @atws/cli init
+```
+
 ## Packages
 
 | Package                                            | Description                                                                           | Downloads                                                                                                                                                                                                                                                                                |

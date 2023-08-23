@@ -18,7 +18,7 @@ $ npm install -g @atws/cli
 $ atws COMMAND
 running command...
 $ atws (--version)
-@atws/cli/1.2.0 win32-x64 node-v18.15.0
+@atws/cli/1.3.0 win32-x64 node-v18.15.0
 $ atws --help [COMMAND]
 USAGE
   $ atws COMMAND
@@ -59,9 +59,10 @@ Init @atws config setup
 
 ```
 USAGE
-  $ atws init [-f]
+  $ atws init [-a] [-f]
 
 FLAGS
+  -a, --all    Install all components
   -f, --force  Overwrite existing config files
 
 DESCRIPTION
@@ -69,9 +70,11 @@ DESCRIPTION
 
 EXAMPLES
   $ atws init
+
+  $ atws init -lall
 ```
 
-_See code: [dist/commands/init/index.ts](https://github.com/Austrian-Web-Services/config/blob/v1.2.0/dist/commands/init/index.ts)_
+_See code: [dist/commands/init/index.ts](https://github.com/Austrian-Web-Services/config/blob/v1.3.0/dist/commands/init/index.ts)_
 
 ## `atws update`
 
@@ -88,5 +91,5 @@ EXAMPLES
   $ atws update
 ```
 
-_See code: [dist/commands/update/index.ts](https://github.com/Austrian-Web-Services/config/blob/v1.2.0/dist/commands/update/index.ts)_
+_See code: [dist/commands/update/index.ts](https://github.com/Austrian-Web-Services/config/blob/v1.3.0/dist/commands/update/index.ts)_
 <!-- commandsstop -->

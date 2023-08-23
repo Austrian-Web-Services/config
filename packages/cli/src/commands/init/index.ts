@@ -13,9 +13,13 @@ import * as Listr from 'listr'
 export default class Init extends Command {
   public static override description = 'Init @atws config setup'
 
-  public static override examples = [`$ atws init`]
+  public static override examples = [`$ atws init`, `$ atws init -lall`]
 
   public static override flags = {
+    all: Flags.boolean({
+      char: 'a',
+      description: 'Install all components',
+    }),
     force: Flags.boolean({
       char: 'f',
       description: 'Overwrite existing config files',
@@ -26,31 +30,38 @@ export default class Init extends Command {
 
   public async run() {
     const {
-      flags: { force },
+      flags: { force, all },
     } = await this.parse(Init)
 
-    const components = (
-      (await prompt([
-        {
-          choices: [
-            { checked: true, name: 'Prettier' },
-            { checked: true, name: 'ESLint' },
-            { checked: true, name: 'VSCode Settings' },
-            { checked: true, name: 'EditorConfig' },
-          ],
-          message: 'Which components would you like to include?',
-          name: 'components',
-          type: 'checkbox',
-          validate: (answer) => {
-            if (answer.length < 1) {
-              return 'You must choose at least one component.'
-            }
+    const components = all
+      ? ([
+          'Prettier',
+          'ESLint',
+          'VSCode Settings',
+          'EditorConfig',
+        ] as InstallComponents[])
+      : (
+          (await prompt([
+            {
+              choices: [
+                { checked: true, name: 'Prettier' },
+                { checked: true, name: 'ESLint' },
+                { checked: true, name: 'VSCode Settings' },
+                { checked: true, name: 'EditorConfig' },
+              ],
+              message: 'Which components would you like to include?',
+              name: 'components',
+              type: 'checkbox',
+              validate: (answer) => {
+                if (answer.length < 1) {
+                  return 'You must choose at least one component.'
+                }
 
-            return true
-          },
-        },
-      ])) as { components: InstallComponents[] }
-    ).components
+                return true
+              },
+            },
+          ])) as { components: InstallComponents[] }
+        ).components
 
     if (!force && !(await allowWrite('.eslintrc.js'))) {
       this.log('Aborting')
