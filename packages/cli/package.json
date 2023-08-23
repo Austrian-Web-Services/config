@@ -33,7 +33,8 @@
     "@oclif/plugin-help": "^5.2.17",
     "inquirer": "^8.2.6",
     "listr": "^0.14.3",
-    "nypm": "^0.3.0"
+    "nypm": "^0.3.0",
+    "root": "workspace:*"
   },
   "devDependencies": {
     "@types/inquirer": "^8.2.6",
