@@ -1,5 +1,5 @@
 /* eslint-disable canonical/filename-match-exported */
-import { type InstallComponents } from '../../utils'
+import { detectPackageManagerTask, type InstallComponents } from '../../utils'
 import {
   allowWrite,
   createConfigFiles,
@@ -9,12 +9,11 @@ import {
 import { Command, Flags } from '@oclif/core'
 import { prompt } from 'inquirer'
 import * as Listr from 'listr'
-import { detectPackageManager } from 'nypm'
 
 export default class Init extends Command {
   public static override description = 'Init @atws config setup'
 
-  public static override examples = [`$ atws init`, `$ atws init -p yarn`]
+  public static override examples = [`$ atws init`]
 
   public static override flags = {
     force: Flags.boolean({
@@ -29,16 +28,6 @@ export default class Init extends Command {
     const {
       flags: { force },
     } = await this.parse(Init)
-
-    const packageManager = await detectPackageManager(process.cwd(), {
-      includeParentDirs: true,
-    })
-
-    if (!packageManager) {
-      throw new Error('No package manager detected')
-    }
-
-    this.log(`Installing ${packageManager.name} dependencies`)
 
     const components = (
       (await prompt([
@@ -79,16 +68,7 @@ export default class Init extends Command {
     }
 
     const tasks = new Listr([
-      {
-        task: async (context, task) => {
-          context.packageManager = await detectPackageManager(process.cwd(), {
-            includeParentDirs: true,
-          })
-
-          task.title = `Detected ${context.packageManager?.name}`
-        },
-        title: 'Detecting package manager',
-      },
+      detectPackageManagerTask,
       {
         task: async (context, rootTask) => {
           const installList = new Listr([])
@@ -110,9 +90,20 @@ export default class Init extends Command {
               task: async (_context, task) => {
                 await installEslint(context.packageManager)
                 task.title = 'Installed ESLint'
-                rootTask.title = 'Installed dependencies'
               },
               title: 'Installing ESLint',
+            })
+          }
+
+          if (components.length === 0) {
+            installList.add({
+              task: () => (rootTask.title = 'No dependencies installed'),
+              title: '',
+            })
+          } else {
+            installList.add({
+              task: () => (rootTask.title = 'Installed dependencies'),
+              title: '',
             })
           }
 

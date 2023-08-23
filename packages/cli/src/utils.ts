@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable node/no-sync */
 import {
   editorConfig,
@@ -5,9 +6,15 @@ import {
   sampleEslintConfig,
   samplePrettierConfig,
 } from './configs'
+import * as chalk from 'chalk'
 import { prompt } from 'inquirer'
+import { type ListrTask } from 'listr'
 import * as fs from 'node:fs'
-import { type PackageManager, removeDependency } from 'nypm'
+import {
+  detectPackageManager,
+  type PackageManager,
+  removeDependency,
+} from 'nypm'
 import { addDevDependency } from 'nypm'
 
 export type InstallComponents =
@@ -165,4 +172,91 @@ export const createConfigFiles = (
   if (components.includes('EditorConfig')) {
     fs.writeFileSync('.editorconfig', editorConfig)
   }
+}
+
+export const detectPackageManagerTask: ListrTask = {
+  task: async (context, task) => {
+    context.packageManager = await detectPackageManager(process.cwd(), {
+      includeParentDirs: true,
+    })
+
+    if (context.packageManager) {
+      task.title = `Detected ${context.packageManager?.name}`
+    } else {
+      throw new Error('No package manager detected, aborting')
+    }
+  },
+  title: 'Detecting package manager',
+}
+
+export const lookupDependencyVersion = async (
+  dependency: string,
+  props?: {
+    prod?: boolean
+  }
+) => {
+  const packageJson = JSON.parse(fs.readFileSync('package.json').toString())
+
+  const version =
+    packageJson[props?.prod ? 'dependencies' : 'devDependencies']?.[dependency]
+
+  if (typeof version !== 'string') return undefined
+
+  return {
+    name: dependency,
+    version,
+  }
+}
+
+export const lookupVersions = async () => {
+  const prettierVersion = await lookupDependencyVersion('prettier')
+  const eslintVersion = await lookupDependencyVersion('eslint')
+  const prettierConfigVersion = await lookupDependencyVersion(
+    '@atws/prettier-config'
+  )
+  const eslintConfigVersion = await lookupDependencyVersion(
+    '@atws/eslint-config'
+  )
+  const eslintParserVersion = await lookupDependencyVersion(
+    '@typescript-eslint/parser'
+  )
+
+  return {
+    eslintConfigVersion,
+    eslintParserVersion,
+    eslintVersion,
+    prettierConfigVersion,
+    prettierVersion,
+  }
+}
+
+export const printUpdateMessage = async (
+  initialVersions: Awaited<ReturnType<typeof lookupVersions>>
+) => {
+  const newVersions = await lookupVersions()
+
+  const messages: string[] = []
+
+  // loop through newVersions and initialVersions
+  // print out the differences
+  // if there are no differences, print out a message saying that everything is up to date
+
+  for (const [key, value] of Object.entries(newVersions)) {
+    const oldValue = initialVersions[key as keyof typeof initialVersions]
+
+    if (oldValue?.version !== value?.version && value?.name) {
+      // print out the difference, add colors with chalk
+      messages.push(
+        `Updated ${chalk.blue(
+          value.name
+        )}\t${oldValue?.version}\t➜\t${chalk.green(value.version)}`
+      )
+    }
+  }
+
+  if (messages.length === 0) {
+    messages.push('Everything was up to date')
+  }
+
+  return messages
 }
