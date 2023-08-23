@@ -30,6 +30,7 @@ USAGE
 
 <!-- commands -->
 * [`atws help [COMMANDS]`](#atws-help-commands)
+* [`atws init`](#atws-init)
 
 ## `atws help [COMMANDS]`
 
@@ -50,4 +51,26 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.17/src/commands/help.ts)_
+
+## `atws init`
+
+Init @atws config setup
+
+```
+USAGE
+  $ atws init [-f]
+
+FLAGS
+  -f, --force  Overwrite existing config files
+
+DESCRIPTION
+  Init @atws config setup
+
+EXAMPLES
+  $ atws init
+
+  $ atws init -p yarn
+```
+
+_See code: [dist/commands/init/index.ts](https://github.com/Austrian-Web-Services/config/blob/v0.0.0/dist/commands/init/index.ts)_
 <!-- commandsstop -->

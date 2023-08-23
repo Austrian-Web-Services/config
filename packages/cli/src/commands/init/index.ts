@@ -2,8 +2,8 @@
 /* eslint-disable canonical/filename-match-exported */
 import { Command, Flags } from '@oclif/core'
 import { prompt } from 'inquirer'
-import Listr from 'listr'
-import fs from 'node:fs'
+import * as Listr from 'listr'
+import * as fs from 'node:fs'
 import { type PackageManager } from 'nypm'
 import { addDevDependency, detectPackageManager, removeDependency } from 'nypm'
 

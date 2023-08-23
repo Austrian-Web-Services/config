@@ -5,10 +5,8 @@
     "module": "commonjs",
     "outDir": "dist",
     "rootDir": "src",
-    "target": "es2019",
-    "composite": true,
-    "noEmit": false
+    "strict": true,
+    "target": "es2019"
   },
-  "extends": "../../tsconfig.json",
   "include": ["src/**/*"]
 }
