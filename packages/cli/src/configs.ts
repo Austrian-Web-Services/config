@@ -1,4 +1,3 @@
-
 export const sampleEslintConfig = `module.exports = {
   env: {
     node: true,
@@ -30,9 +29,15 @@ export const sampleEslintConfig = `module.exports = {
 }
 `
 
-export const samplePrettierConfig = `module.exports = {
-  ...require("@atws/prettier-config"),
+export const samplePrettierConfig = `const preset = require('@atws/prettier-config')
+
+/** @type {import("prettier").Options} */
+const config = {
+  ...preset,
+  plugins: [...preset.plugins],
 }
+
+module.exports = config
 `
 
 export const recommendations = [
