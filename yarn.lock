@@ -44,7 +44,7 @@ __metadata:
     listr: ^0.14.3
     nypm: ^0.3.0
     oclif: ^3.11.3
-    root: "workspace:^"
+    semantic-release: 19.0.5
     shx: ^0.3.4
     ts-node: ^10.9.1
     tslib: ^2.6.2
@@ -11271,7 +11271,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root@workspace:., root@workspace:^":
+"root@workspace:.":
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
