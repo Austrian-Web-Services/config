@@ -37,6 +37,8 @@ __metadata:
   dependencies:
     "@oclif/core": ^2.11.8
     "@oclif/plugin-help": ^5.2.17
+    "@oclif/plugin-not-found": ^2.3.37
+    "@oclif/plugin-warn-if-update-available": ^2.0.48
     "@types/inquirer": ^8.2.6
     "@types/listr": ^0.14.4
     "@types/node": ^16.18.41
@@ -1522,7 +1524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-not-found@npm:^2.3.32":
+"@oclif/plugin-not-found@npm:^2.3.32, @oclif/plugin-not-found@npm:^2.3.37":
   version: 2.3.37
   resolution: "@oclif/plugin-not-found@npm:2.3.37"
   dependencies:
@@ -1533,7 +1535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-warn-if-update-available@npm:^2.0.44":
+"@oclif/plugin-warn-if-update-available@npm:^2.0.44, @oclif/plugin-warn-if-update-available@npm:^2.0.48":
   version: 2.0.48
   resolution: "@oclif/plugin-warn-if-update-available@npm:2.0.48"
   dependencies:
