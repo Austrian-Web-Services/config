@@ -15,7 +15,13 @@ yarn add -D prettier @atws/prettier-config
 Create a `.prettierrc.js` file in the root of your project and extend the base config.
 
 ```js
-module.exports = {
-  ...require('@atws/prettier-config'),
+const preset = require('@atws/prettier-config')
+
+/** @type {import("prettier").Options} */
+const config = {
+  ...preset,
+  plugins: [...preset.plugins],
 }
+
+module.exports = config
 ```
