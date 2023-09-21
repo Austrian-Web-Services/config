@@ -10,7 +10,7 @@ This package contains extensive eslint rulesets; it is based on [gajus/eslint-co
 Install `eslint` and the package:
 
 ```bash
-yarn add -D eslint @atws/eslint-config @typescript-eslint/parser@^5.62.0
+yarn add -D eslint @atws/eslint-config
 ```
 
 In the root of your project, create a `.eslintrc.js` file and extend the base configuration.

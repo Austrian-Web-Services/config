@@ -27,8 +27,8 @@
     "extends": "semantic-release-monorepo"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.46.0",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
     "projen": "^0.68.5",
     "semantic-release": "19.0.5",
     "semantic-release-monorepo": "^7.0.5",

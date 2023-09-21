@@ -28,16 +28,15 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint-config-canonical": "^41.1.7",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-config-canonical": "^41.2.2",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-canonical": "^4.9.0",
+    "eslint-plugin-canonical": "^4.12.0",
     "eslint-plugin-react-refresh": "^0.4.3"
   },
   "peerDependencies": {
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.46.0"
+    "eslint": "^8.49.0"
   },
   "engines": {
     "node": ">=16"
