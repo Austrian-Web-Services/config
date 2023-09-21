@@ -30,20 +30,18 @@
     "version": "oclif readme && git add README.md"
   },
   "dependencies": {
-    "@oclif/core": "^2.11.8",
-    "@oclif/plugin-help": "^5.2.17",
+    "@oclif/core": "^2.15.0",
+    "@oclif/plugin-help": "^5.2.19",
     "chalk": "^4.1.2",
     "inquirer": "^8.2.6",
     "listr": "^0.14.3",
     "nypm": "^0.3.0"
   },
   "devDependencies": {
-    "@oclif/plugin-not-found": "^2.3.37",
-    "@oclif/plugin-warn-if-update-available": "^2.0.48",
     "@types/inquirer": "^8.2.6",
     "@types/listr": "^0.14.4",
     "@types/node": "^16.18.41",
-    "oclif": "^3.11.3",
+    "oclif": "^3.16.0",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
@@ -63,9 +61,7 @@
     "dirname": "atws",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-not-found",
-      "@oclif/plugin-warn-if-update-available"
+      "@oclif/plugin-help"
     ],
     "topicSeparator": " ",
     "topics": {}
