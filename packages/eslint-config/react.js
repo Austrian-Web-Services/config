@@ -61,6 +61,7 @@ module.exports = {
       'warn',
       {
         allowConstantExport: true,
+        allowExportNames: ['loader'],
       },
     ],
   },
