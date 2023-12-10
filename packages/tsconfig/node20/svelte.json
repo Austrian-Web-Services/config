@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "preserveValueImports": true,
+    "sourceMap": true,
+    "verbatimModuleSyntax": true
+  },
+  "display": "Svelte",
+  "extends": "./base.json"
+}
