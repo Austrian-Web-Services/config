@@ -14,6 +14,15 @@ module.exports = {
     'canonical/typescript-type-checking',
     'prettier',
   ],
+  overrides: [
+    {
+      files: ['*.d.ts'],
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        'unicorn/prevent-abbreviations': 'off',
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
