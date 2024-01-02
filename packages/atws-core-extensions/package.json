@@ -18,6 +18,7 @@
   },
   "extensionPack": [
     "EditorConfig.EditorConfig",
+    "MylesMurphy.prettify-ts",
     "Orta.vscode-twoslash-queries",
     "PKief.material-icon-theme",
     "VisualStudioExptTeam.vscodeintellicode",
