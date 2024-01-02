@@ -70,8 +70,17 @@ const typescriptRules = {
   semi: ['error', 'never'],
 }
 
+const typescriptDeclarationOverride = {
+  files: ['*.d.ts'],
+  rules: {
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+  },
+}
+
 module.exports = {
   generalDisabledRules,
   prettierConflictRules,
+  typescriptDeclarationOverride,
   typescriptRules,
 }

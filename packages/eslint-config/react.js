@@ -2,6 +2,7 @@ const {
   generalDisabledRules,
   prettierConflictRules,
   typescriptRules,
+  typescriptDeclarationOverride,
 } = require('./lib/overrides')
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
     'canonical/typescript-type-checking',
     'prettier',
   ],
+  overrides: [typescriptDeclarationOverride],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
