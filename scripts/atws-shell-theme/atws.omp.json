@@ -34,12 +34,12 @@
             "style": "agnoster_short"
           },
           "style": "powerline",
-          "template": " {{ .Path }} ",
+          "template": "{{ .Path }} ",
           "type": "path"
         },
         {
           "background": "#044284",
-          "foreground": "#ffffff",
+          "foreground": "#dce9f9",
           "powerline_symbol": "\ue0b4",
           "properties": {
             "always_enabled": true
@@ -58,7 +58,7 @@
       "segments": [
         {
           "background": "#044284",
-          "foreground": "#EFDCF9",
+          "foreground": "#dce9f9",
           "properties": {
             "time_format": "15:04:05"
           },
